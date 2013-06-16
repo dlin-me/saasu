@@ -1,16 +1,18 @@
-
-<?php 
+<?php
 namespace Dlin\Saasu\Entity;
-    class InventoryAdjustmentItem
-    {
-        
-        public $quantity;
-        
-        public int InventoryItemUid;
-        
-        public int AccountUid;
-        
-        public $unitPriceExclTax;
-        
-        public $totalPriceExclTax;
+class InventoryAdjustmentItem extends EntityBase
+{
+    public function __construct($uid=null){
+        parent::__construct($uid);
     }
+
+    public $quantity;
+
+    public $inventoryItemUid;
+
+    public $accountUid;
+
+    public $unitPriceExclTax;
+
+    public $totalPriceExclTax;
+}

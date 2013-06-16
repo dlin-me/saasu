@@ -3,10 +3,12 @@ namespace Dlin\Saasu\Entity;
 
 class Invoice extends Transaction
 {
-    public function  Invoice()
+    public function  __construct($uid=null)
     {
-        $this->TradingTerms = new TradingTerms();
-        $this->QuickPayment = new QuickPayment();
+        parent::__construct($uid);
+        $this->tradingTerms = new TradingTerms();
+        $this->quickPayment = new QuickPayment();
+        $this->invoiceItems = array();
     }
 
 
@@ -20,7 +22,7 @@ class Invoice extends Transaction
     public $status;
     public $invoiceNumber;
     public $purchaseOrderNumber;
-    public $items = array();
+    public $invoiceItems;
     public $quickPayment;
 
     public $tradingTerms;

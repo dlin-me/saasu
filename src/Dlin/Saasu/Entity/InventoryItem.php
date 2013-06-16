@@ -3,6 +3,11 @@ namespace Dlin\Saasu\Entity;
 
 class InventoryItem extends EntityBase
 {
+    public function __construct($uid=null){
+        parent::__construct($uid);
+    }
+
+
     public $code;
     public $description;
     public $isActive = true;

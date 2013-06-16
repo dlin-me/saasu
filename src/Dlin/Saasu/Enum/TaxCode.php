@@ -1,5 +1,5 @@
 <?php
-namespace DavidForest\SaasuBundle\Lib\Enum;
+namespace Dlin\Saasu\Enum;
 
 /**
  * NOTE: Tax codes must exist in your file.

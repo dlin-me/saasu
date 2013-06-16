@@ -1,19 +1,23 @@
-<?php 
+<?php
 namespace Dlin\Saasu\Entity;
-    
-    class InventoryTransfer extends EntityBase
+
+class InventoryTransfer extends EntityBase
+{
+    public function __construct($uid = null)
     {
-        
-        public $date;
-        
-        public $tags;
-        
-        public $summary;
-        
-        public $notes;
-        
-        public $requiresFollowUp = false;
-        
-        
-        public $items = array();
+        parent::__construct($uid);
     }
+
+    public $date;
+
+    public $tags;
+
+    public $summary;
+
+    public $notes;
+
+    public $requiresFollowUp = false;
+
+
+    public $items = array();
+}

@@ -1,16 +1,21 @@
-<?php 
+<?php
 namespace Dlin\Saasu\Entity;
 
-class ServiceInvoiceItem
+class ServiceInvoiceItem extends EntityBase
 {
-	public $description;
-	public $accountUid;
-	public $taxCode;
-        	
-	 public $totalAmountInclTax;
-        
-        public $totalAmountExclTax;
-        
-        public $totalTaxAmount;
-	public $tags;
+    public function __construct($uid = null)
+    {
+        parent::__construct($uid);
+    }
+
+    public $description;
+    public $accountUid;
+    public $taxCode;
+
+    public $totalAmountInclTax;
+
+    public $totalAmountExclTax;
+
+    public $totalTaxAmount;
+    public $tags;
 }

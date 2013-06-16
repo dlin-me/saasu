@@ -20,7 +20,6 @@ class Task
 
     public $taskType; //either 'insert' or 'update'
 
-    public $result; //the result object
 
     public $attributes; //task related attributes
 
@@ -31,6 +30,34 @@ class Task
 
 
     public $list; //the list this task is in, every task must be in a list before execution
+
+
+    /**
+     * @var \Dlin\Saasu\Task\TaskResult
+     */
+    private $_result;
+
+
+
+    /**
+     * @param \Dlin\Saasu\Task\TaskResult $result
+     */
+    public function setResult($result)
+    {
+        $this->_result = $result;
+        $result->updateEntity($this->entity);
+    }
+
+
+
+    /**
+     * @return \Dlin\Saasu\Task\TaskResult
+     */
+    public function getResult()
+    {
+        return $this->_result;
+    }
+
 
 
     /**
@@ -59,20 +86,19 @@ class Task
     public function toXML()
     {
 
-
         $oXMLout = new \XMLWriter();
         $oXMLout->openMemory();
         $oXMLout->setIndent(true);
         $oXMLout->setIndentString('    ');
-
         $className = explode('\\', get_class($this->entity));
 
         $className = lcfirst(end($className));
 
-        $nodeName = ucfirst($this->taskType) . ucfirst($className);
+        $nodeName = ($this->taskType) . ucfirst($className);
 
         $oXMLout->startElement($nodeName);
-        $oXMLout->writeRaw($this->entity->toXML());
+        $oXMLout->writeRaw("\n".$this->entity->toXML());
+
         $oXMLout->endElement();
 
         $string = $oXMLout->outputMemory();

@@ -2,9 +2,9 @@
 
 namespace Dlin\Saasu\Tests\Entity;
 
-use Dlin\Saasu\Entity\Address;
 use Dlin\Saasu\Entity\Checkout;
 use Dlin\Saasu\Entity\Contact;
+use Dlin\Saasu\Entity\PostalAddress;
 
 /**
  *
@@ -20,14 +20,14 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
     public function testToXML()
     {
 
-        $billingAddress = new Address();
+        $billingAddress = new PostalAddress();
         $billingAddress->city = 'melbourne';
         $billingAddress->street = 'market street';
         $billingAddress->country = 'australia';
         $billingAddress->postCode = '3000';
         $billingAddress->state = 'Victoria';
 
-        $invoiceAddress = new Address();
+        $invoiceAddress = new PostalAddress();
         $invoiceAddress->city = 'sydney';
         $invoiceAddress->street = 'invoice street';
         $invoiceAddress->country = 'australia';
@@ -46,6 +46,7 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
 
 
         $entity = new Checkout();
+        $entity->uid = 123456;
         $entity->paymentAmount = 123123;
         $entity->emailReceipt = 'hello@sfdasd.com';
         $entity->emailReceiptUsingTemplateUid = 123;
@@ -61,7 +62,10 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
 
         $var = $entity2->toXML();
 
-        echo $var;
+
         $this->assertEquals($xml, $var);
+
+
+        $this->assertEquals('checkout', $entity2->getName());
     }
 }

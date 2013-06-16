@@ -2,10 +2,63 @@
 namespace Dlin\Saasu\Entity;
 
 class EntityBase
+
 {
+    //common entity fields
     public $uid;
     public $lastUpdatedUid;
     public $utcLastModified;
+
+
+    //name of the entity
+    private $_entityName;
+
+
+    /**
+     * Constructor
+     *
+     * @param null $uid
+     */
+    public function __construct($uid = null)
+    {
+        $this->uid = $uid;
+        $class = explode('\\', get_class($this));
+        $this->_entityName = lcfirst(end($class));
+
+    }
+
+    /**
+     * This magic setter is used in fromXML method to hydrate entity with the xxxUid field
+     *
+     * @param $name
+     * @param $value
+     */
+    public function __set($name, $value){
+
+        if($name == $this->getName().'Uid' && $value !== null){
+
+            $this->uid = $value;
+        }
+    }
+
+    public function __get($name){
+        if($name == $this->getName().'Uid'){
+            return $this->uid;
+        }
+    }
+
+
+    /**
+     * Return the name of the entity.
+     *
+     * This is used in the webservice URI for some services e.g. get a invoice
+     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->_entityName;
+    }
 
 
     /**
@@ -15,14 +68,14 @@ class EntityBase
      * @param bool $withRoot
      * @return string
      */
-    public function toXML()
+    public function toXML(&$oXMLout = null)
     {
-
-        $oXMLout = new \XMLWriter();
-        $oXMLout->openMemory();
-        $oXMLout->setIndent(true);
-        $oXMLout->setIndentString('    ');
-
+        if (is_null($oXMLout)) {
+            $oXMLout = new \XMLWriter();
+            $oXMLout->openMemory();
+            $oXMLout->setIndent(true);
+            $oXMLout->setIndentString('    ');
+        }
 
         $func = function ($obj, $basename = null) use (&$func, &$oXMLout) {
             $className = explode('\\', get_class($obj));
@@ -32,7 +85,18 @@ class EntityBase
             $oXMLout->startElement($className);
 
             $vars = get_object_vars($obj);
+
+
+            //move uid and updateid to the begining
+            $vars = array('uid' => $vars['uid'], 'lastUpdatedUid' => $vars['lastUpdatedUid']) + $vars;
+
+
             foreach ($vars as $key => $value) {
+
+                if (is_null($value) || strpos($key, '_') === 0) {
+                    continue;
+                }
+
                 if (is_array($value)) {
                     $oXMLout->startElement($key);
                     foreach ($value as $subValue) {
@@ -42,11 +106,15 @@ class EntityBase
                     }
                     $oXMLout->endElement();
 
-
                 } elseif ($value instanceof EntityBase) {
                     $func($value, $key);
+
+                } elseif ($key == 'uid' || $key == 'lastUpdatedUid') {
+                    if ($value != '') {
+                        $oXMLout->writeAttribute($key, $value);
+                    }
                 } else {
-                    $oXMLout->writeElement($key, $value);
+                    $oXMLout->writeElement($key, (string)$value);
                 }
             }
             $oXMLout->endElement();
@@ -76,7 +144,13 @@ class EntityBase
 
             $vars = array_keys(get_object_vars($entity));
 
+            //add a dummy field, that is used in XXXXListResponse
+            $vars[] = $this->getName().'Uid';
+
             foreach ($vars as $fieldName) {
+                if ( strpos($fieldName, '_') === 0) {
+                    continue;
+                }
 
                 if (is_array($entity->$fieldName)) {
 
@@ -90,12 +164,16 @@ class EntityBase
                     }
 
 
-                } else if (is_object($entity->$fieldName)) {
+                } else if (is_object($entity->$fieldName) && $xmlElement->$fieldName) {
 
                     $func($xmlElement->$fieldName, $entity->$fieldName);
 
                 } else if (trim((string)$xmlElement->$fieldName) != '') {
                     $entity->$fieldName = (string)$xmlElement->$fieldName;
+                } else if (trim((string)$xmlElement[$fieldName]) != '') {
+                    $entity->$fieldName = (string)$xmlElement[$fieldName];
+                } else {
+                    $entity->$fieldName = null;
                 }
 
 

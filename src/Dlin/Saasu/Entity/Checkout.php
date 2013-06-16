@@ -13,6 +13,8 @@ class Checkout extends EntityBase
 
     public function __construct()
     {
+        parent::__construct();
+
         $this->billingContact = new Contact();
         $this->shippingContact = new Contact();
         $this->sale = new Invoice();

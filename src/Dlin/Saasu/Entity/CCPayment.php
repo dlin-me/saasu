@@ -1,8 +1,13 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
-class CCPayment
+class CCPayment extends EntityBase
 {
+    public function __construct($uid=null){
+        parent::__construct($uid);
+    }
+
+
     public $cardholderName = "";
     public $cCNumber = "";
 // <summary>

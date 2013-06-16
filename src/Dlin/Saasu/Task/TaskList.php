@@ -8,6 +8,7 @@
  */
 namespace Dlin\Saasu\Task;
 
+
 class TaskList {
 
     public $tasks;
@@ -22,6 +23,10 @@ class TaskList {
         $task->list = $this;
     }
 
+    public function getTaskAt($i){
+        return $this->tasks[$i];
+    }
+
 
     /**
      * Return the xml of the task list
@@ -29,19 +34,21 @@ class TaskList {
      * @return string
      */
     public function toXML(){
-        $oXMLout = new \XMLWriter();
-        $oXMLout->openMemory();
-        $oXMLout->setIndent(true);
-        $oXMLout->setIndentString('    ');
 
-        $oXMLout->startDocument(1, 'utf-8');
+            $oXMLout = new \XMLWriter();
+            $oXMLout->openMemory();
+            $oXMLout->setIndent(true);
+            $oXMLout->setIndentString('    ');
+
+
+        $oXMLout->startDocument("1.0", 'utf-8');
         $oXMLout->startElement('tasks');
 
         /**
          * @var \Dlin\Saasu\Task\Task $task
          */
         foreach($this->tasks as $task){
-            $oXMLout->writeRaw($task->toXML());
+           $oXMLout->writeRaw("\n".$task->toXML());
         }
         $oXMLout->endElement();
         $oXMLout->endDocument();
@@ -50,4 +57,9 @@ class TaskList {
 
         return $xml;
     }
+
+
+
+
+
 }

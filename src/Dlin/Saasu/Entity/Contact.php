@@ -1,16 +1,15 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
-use Dlin\Saasu\Entity\Address;
+use Dlin\Saasu\Entity\PostalAddress;
 
 class Contact extends EntityBase
 {
 
     public function __construct(){
 
-
-          $this->postalAddress = new Address();
-          $this->otherAddress = new Address();
+          $this->postalAddress = new PostalAddress();
+          $this->otherAddress = new PostalAddress();
     }
 
 

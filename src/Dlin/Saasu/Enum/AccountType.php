@@ -3,7 +3,7 @@ namespace Dlin\Saasu\Enum;
 /**
  * A.K.A Transaction Category Type
  */
-class AccountType
+class AccountType extends BaseEnum
 {
     const Income = "Income";
     const Expense = "Expense";
