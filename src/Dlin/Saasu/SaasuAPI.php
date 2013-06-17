@@ -40,9 +40,8 @@ class SaasuAPI {
         $xml = $response->xml();
         $exceptionXml = $xml->errors->error;
         if($exceptionXml){
-            $type = 'Dlin\\Saasu\\Exception\\'. strval($exceptionXml->type);
             $message = $exceptionXml->message;
-            throw new $type($message);
+            throw new \Exception(strval($exceptionXml->type).': w'.$message);
         }
 
         return $this;

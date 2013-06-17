@@ -1,6 +1,6 @@
 <?php
 namespace Dlin\Saasu\Enum;
-class InvoiceStatus
+class InvoiceStatus extends BaseEnum
 {
     const Quote = "Q";
     const Order = "O";

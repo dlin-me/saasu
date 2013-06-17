@@ -2,6 +2,7 @@
 namespace Dlin\Saasu\Tests;
 
 
+use Dlin\Saasu\Criteria\InvoiceCriteria;
 use Dlin\Saasu\Criteria\TransactionCategoryCriteria;
 use Dlin\Saasu\Entity\Invoice;
 use Dlin\Saasu\Entity\TransactionCategory;
@@ -35,8 +36,10 @@ return;
         $api = new SaasuAPI('CAD81524A8BB4F1B9AEE163FC0D42E7B', '39594');
 
 
-        $c= new TransactionCategoryCriteria();
-        $c->type = AccountType::Expense;
+        $c= new InvoiceCriteria();
+        $c->paidStatus = 'sdf';
+        print_r( $c->validate());
+exit;
 
         $res = $api->searchEntities($c);
 
@@ -108,7 +111,7 @@ return;
         $item1->taxCode = TaxCode::SaleInclGst;
         $item1->totalAmountInclTax = 2132.51;
 
-        $entity->invoiceItems[] =
+        $entity->invoiceItems[] = $item1;
 
 
 

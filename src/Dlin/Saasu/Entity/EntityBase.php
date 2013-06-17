@@ -70,7 +70,7 @@ class EntityBase
      */
     public function toXML(&$oXMLout = null)
     {
-        if (is_null($oXMLout)) {
+        if ($oXMLout === null) {
             $oXMLout = new \XMLWriter();
             $oXMLout->openMemory();
             $oXMLout->setIndent(true);
@@ -93,7 +93,7 @@ class EntityBase
 
             foreach ($vars as $key => $value) {
 
-                if (is_null($value) || strpos($key, '_') === 0) {
+                if ($value === null || strpos($key, '_') === 0) {
                     continue;
                 }
 

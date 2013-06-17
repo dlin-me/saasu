@@ -1,7 +1,9 @@
 <?php
 namespace DavidForest\SaasuBundle\Lib\Enum;
 
-class TransactionType
+use Dlin\Saasu\Enum\BaseEnum;
+
+class TransactionType extends BaseEnum
 {
     const Sale = "S";
     const Purchase = "P";

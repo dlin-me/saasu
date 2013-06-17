@@ -28,11 +28,10 @@ class TransactionCategoryCriteria extends CriteriaBase
     }
 
 
-    public function validate($forUpdate = false)
+    public function validate()
     {
-
         return Validator::instance()->
-            lookAt($this->type, 'type')->enumArray(AccountType::values())->
+            lookAt($this->type, 'type')->inArray(AccountType::values())->
             lookAt($this->isActive, 'isActive')->bool()->
             lookAt($this->isInbuilt, 'isInbuilt')->bool()->getErrors();
 
