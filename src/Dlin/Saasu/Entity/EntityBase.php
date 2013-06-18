@@ -13,6 +13,23 @@ class EntityBase
     //name of the entity
     private $_entityName;
 
+    /**
+     * Extra data holder, if Saasu web service return extra fields.
+     *
+     * This happens when trying to search for a list of entities (e.g. invoice), Saasu actually return extra key<->value pairs
+     * that are not required to make CRUD request.
+     *
+     * @var array
+     */
+    private $_extraData;
+
+    public function setExtra($name, $value){
+        $this->_extraData[$name] = $value;
+    }
+
+    public function getExtra($name){
+        return isset($this->_extraData[$name]) ? $this->_extraData[$name] : null;
+    }
 
     /**
      * Constructor
@@ -24,28 +41,11 @@ class EntityBase
         $this->uid = $uid;
         $class = explode('\\', get_class($this));
         $this->_entityName = lcfirst(end($class));
+        $this->_extraData = array();
 
     }
 
-    /**
-     * This magic setter is used in fromXML method to hydrate entity with the xxxUid field
-     *
-     * @param $name
-     * @param $value
-     */
-    public function __set($name, $value){
 
-        if($name == $this->getName().'Uid' && $value !== null){
-
-            $this->uid = $value;
-        }
-    }
-
-    public function __get($name){
-        if($name == $this->getName().'Uid'){
-            return $this->uid;
-        }
-    }
 
 
     /**
@@ -144,39 +144,87 @@ class EntityBase
 
             $vars = array_keys(get_object_vars($entity));
 
-            //add a dummy field, that is used in XXXXListResponse
-            $vars[] = $this->getName().'Uid';
+            $usedVars = array();
 
-            foreach ($vars as $fieldName) {
+            //add a dummy field, that is used in XXXXListResponse
+            $entityName = $entity->getName();
+
+            foreach($xmlElement->children() as $sub){
+
+                $fieldName = $sub->getName();
+
+                if(!in_array($fieldName, $vars) && substr($fieldName, 0, strlen($entityName)) == $entityName){
+                    $fieldName = substr($fieldName, strlen($entityName));
+                    $fieldName = lcfirst($fieldName);
+                }
+
                 if ( strpos($fieldName, '_') === 0) {
                     continue;
                 }
 
-                if (is_array($entity->$fieldName)) {
 
-                    foreach ($xmlElement->$fieldName as $child) {
-                        foreach ($child as $cname => $c) {
-                            $subClass = __NAMESPACE__ . '\\' . ucfirst($cname);
-                            $obj = new $subClass();
-                            $func($c, $obj);
-                            $entity->{$fieldName}[] = $obj;
+                if(in_array($fieldName, $vars)){
+                    $usedVars[] = $fieldName;
+
+                    if (is_array($entity->$fieldName)) {
+
+                        foreach ($sub as $child) {
+                            foreach ($child as $cname => $c) {
+                                $subClass = __NAMESPACE__ . '\\' . ucfirst($cname);
+                                $obj = new $subClass();
+                                $func($c, $obj);
+                                $entity->{$fieldName}[] = $obj;
+                            }
                         }
+
+
+                    } else if (is_object($entity->$fieldName) && $sub) {
+
+                        $func($sub, $entity->$fieldName);
+
+                    } else if (trim((string)$sub) != '') {
+                        $entity->$fieldName = (string)$sub;
+                    } else {
+                        //$entity->$fieldName = null;
                     }
 
+                }else{
+                    $entity->setExtra($fieldName, (string)$sub);
 
-                } else if (is_object($entity->$fieldName) && $xmlElement->$fieldName) {
+                }
+            }
 
-                    $func($xmlElement->$fieldName, $entity->$fieldName);
 
-                } else if (trim((string)$xmlElement->$fieldName) != '') {
-                    $entity->$fieldName = (string)$xmlElement->$fieldName;
-                } else if (trim((string)$xmlElement[$fieldName]) != '') {
-                    $entity->$fieldName = (string)$xmlElement[$fieldName];
-                } else {
-                    $entity->$fieldName = null;
+            foreach($xmlElement->attributes() as $fieldName => $v){
+                if(!in_array($fieldName, $vars) && substr($fieldName, 0, strlen($entityName)) == $entityName){
+                    $fieldName = substr($fieldName, strlen($entityName));
+                    $fieldName = lcfirst($fieldName);
                 }
 
 
+                if ( strpos($fieldName, '_') === 0) {
+                    continue;
+                }
+
+                if(in_array($fieldName, $vars)){
+                    $usedVars[] = $fieldName;
+                    if (trim((string)$v) != '') {
+                        $entity->$fieldName = (string)$v;
+                    } else {
+                        $entity->$fieldName = null;
+                    }
+                }
+            }
+
+            //ok, set null to the rest fields
+            $fields = array_diff($vars, $usedVars);
+
+
+            foreach($fields as $fieldName){
+                if ( strpos($fieldName, '_') === 0) {
+                    continue;
+                }
+                $entity->$fieldName =null;
             }
 
 

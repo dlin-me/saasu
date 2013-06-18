@@ -1,10 +1,10 @@
 <?php
 /**
- * 
+ *
  * User: davidlin
  * Date: 17/06/13
  * Time: 2:06 PM
- * 
+ *
  */
 
 namespace Dlin\Saasu\Criteria;
@@ -13,16 +13,17 @@ namespace Dlin\Saasu\Criteria;
 use Dlin\Saasu\Enum\EntityTypeUid;
 use Dlin\Saasu\Validator\Validator;
 
-class DeletedEntityCriteria extends CriteriaBase{
+class DeletedEntityCriteria extends CriteriaBase
+{
 
     public $entityTypeUid;
     public $utcDeletedFrom;
     public $utcDeletedTo;
 
-    public function getEntityClass(){
+    public function getEntityClass()
+    {
         return "Dlin\\Saasu\\Entity\\DeletedEntity";
     }
-
 
 
     public function validate()
@@ -33,7 +34,6 @@ class DeletedEntityCriteria extends CriteriaBase{
             lookAt($this->utcDeletedTo, 'utcDeletedTo')->dateTime()->getErrors();
 
     }
-
 
 
 }

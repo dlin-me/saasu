@@ -14,5 +14,5 @@ class Transaction extends EntityBase
     public $requiresFollowUp = false;
     public $ccy;
     public $autoPopulateFXRate = true;
-    public $fCToBCFXRate;
+    public $fcToBcFxRate;
 }
