@@ -20,7 +20,7 @@ return;
 
 
         $api = new SaasuAPI('CAD81524A8BB4F1B9AEE163FC0D42E7B', '39594');
-      //  $api = new SaasuAPI('13DCA44F41364C6C92656705427D58E5', '25990');
+      //  $api = new SaasuAPI('13DCA44F41364C6C92656705427D58E5', '25990');//real
         $api->loadEntity($entity);
 
         echo $entity->toXML();
@@ -33,8 +33,9 @@ return;
 
 
 
-       // $api = new SaasuAPI('CAD81524A8BB4F1B9AEE163FC0D42E7B', '39594');
-        $api = new SaasuAPI('13DCA44F41364C6C92656705427D58E5', '25990');
+
+       $api = new SaasuAPI('CAD81524A8BB4F1B9AEE163FC0D42E7B', '39594');
+        //$api = new SaasuAPI('13DCA44F41364C6C92656705427D58E5', '25990'); //real
 
         $c= new InvoiceCriteria();
         $c->transactionType = 's';

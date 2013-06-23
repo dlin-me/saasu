@@ -44,7 +44,7 @@ class Activity extends EntityBase
 
         return Validator::instance()->
             lookAt($this->uid, 'uid')->required($forUpdate)->int()->
-            lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->isInt()->
+            lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
             lookAt($this->utcFirstCreated, 'utcFirstCreated')->dateTime()->
             lookAt($this->type, 'type')->required()->length(1)->
             lookAt($this->done, 'done')->enum('true', 'false')->

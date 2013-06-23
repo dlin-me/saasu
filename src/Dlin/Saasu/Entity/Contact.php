@@ -6,12 +6,13 @@ use Dlin\Saasu\Entity\PostalAddress;
 class Contact extends EntityBase
 {
 
-    public function __construct(){
 
-          $this->postalAddress = new PostalAddress();
-          $this->otherAddress = new PostalAddress();
+    public function __construct($uid = null)
+    {
+        parent::__construct($uid);
+        $this->postalAddress = new PostalAddress();
+        $this->otherAddress = new PostalAddress();
     }
-
 
 
     public $salutation;

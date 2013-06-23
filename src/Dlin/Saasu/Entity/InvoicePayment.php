@@ -4,10 +4,8 @@ namespace Dlin\Saasu\Entity;
 class InvoicePayment extends EntityBase
 {
 
-
-    public function __construct($transactionType)
-    {
-        $this->TransactionType = $transactionType;
+    public function __construct($uid=null){
+        parent::__construct($uid);
     }
 
     public $transactionType;
