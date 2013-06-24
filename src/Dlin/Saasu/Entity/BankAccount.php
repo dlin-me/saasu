@@ -19,16 +19,13 @@ class BankAccount extends TransactionCategory
         return Validator::instance()->
             lookAt($this->uid, 'uid')->required($forUpdate)->int()->
             lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
-            lookAt($this->type, 'type')->enum('Asset', 'Equity', 'Liability')->
-            lookAt($this->type, 'type')->required()->length(1)->
-            lookAt($this->done, 'done')->enum('true', 'false')->
-            lookAt($this->title, 'title')->required()->length(1, 128)->
-            lookAt($this->details, 'details')->
-            lookAt($this->due, 'due')->date()->
-            lookAt($this->lastModified, 'lastModified')->dateTime()->
-            lookAt($this->owner, 'owner')->email()->
-            lookAt($this->attachedToType, 'attachedToType')->enum('Contact', 'Sale', 'Purchase', 'Employee')->
-            lookAt($this->attachedToUid, 'attachedToUid')->int()->getErrors();
+            lookAt($this->type, 'type')->required(true)->enum('Asset', 'Equity', 'Liability')->
+            lookAt($this->name, 'name')->length(0,75)->
+            lookAt($this->isActive, 'isActive')->bool()->
+            lookAt($this->displayName, 'displayName')->required(true)->length(0,75)->
+            lookAt($this->bsb, 'bsb')->length(0,6)->
+            lookAt($this->accountNumber, 'accountNumber')->length(0,20)->
+            getErrors();
 
     }
 }
