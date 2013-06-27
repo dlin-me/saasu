@@ -1,7 +1,7 @@
 <?php
 namespace Dlin\Saasu\Enum;
 
-class Salutation
+class Salutation extends BaseEnum
 {
     const Mr = "Mr.";
     const Mrs = "Mrs.";

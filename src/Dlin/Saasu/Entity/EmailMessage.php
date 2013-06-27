@@ -1,6 +1,8 @@
 <?php 
 namespace Dlin\Saasu\Entity;
 
+use Dlin\Saasu\Validator\Validator;
+
 class EmailMessage extends EntityBase
 {
 
@@ -15,4 +17,11 @@ class EmailMessage extends EntityBase
 	public $subject;
 	public $body;
 
+
+    public function validate($forUpdate = false){
+        return Validator::instance()->
+            lookAt($this->from, 'from')->required(true)->
+            lookAt($this->to, 'to')->required(true)->
+            getErrors();
+    }
 }

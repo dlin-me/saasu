@@ -6,6 +6,7 @@ class InventoryTransfer extends EntityBase
     public function __construct($uid = null)
     {
         parent::__construct($uid);
+        $this->items = array();
     }
 
     public $date;
@@ -19,5 +20,5 @@ class InventoryTransfer extends EntityBase
     public $requiresFollowUp = false;
 
 
-    public $items = array();
+    public $items;
 }

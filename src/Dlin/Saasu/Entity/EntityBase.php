@@ -9,9 +9,8 @@ class EntityBase
     public $lastUpdatedUid;
     public $utcLastModified;
 
-
     //name of the entity
-    private $_entityName;
+    protected  $_entityName;
 
     /**
      * Extra data holder, if Saasu web service return extra fields.
