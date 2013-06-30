@@ -1,6 +1,8 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
+use Dlin\Saasu\Validator\Validator;
+
 class InvoicePayment extends EntityBase
 {
 
@@ -12,8 +14,8 @@ class InvoicePayment extends EntityBase
     public $transactionType;
     public $date;
     public $ccy;
-    public $autoPopulateFXRate;
-    public $fCToBCFXRate;
+    public $autoPopulateFxRate;
+    public $fcToBcFxRate;
 
     public $fee;
     public $reference;
@@ -23,4 +25,23 @@ class InvoicePayment extends EntityBase
     public $paymentAccountUid;
     public $dateCleared;
     public $items;
+
+    public function validate($forUpdate){
+
+        return Validator::instance()->
+            lookAt($this->uid, 'uid')->required($forUpdate)->int()->
+            lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
+            lookAt($this->transactionType, 'transactionType')->enum('SP','PP')->required(true)->
+            lookAt($this->date, 'date')->required(true)->date()->
+            lookAt($this->reference, 'reference')->length(0,50)->
+            lookAt($this->summary, 'summary')->length(0,75)->
+            lookAt($this->ccy, 'ccy')->length(0,3)->
+            lookAt($this->autoPopulateFxRate, 'autoPopulateFxRate')->bool()->
+            lookAt($this->fcToBcFxRate, 'fcToBcFxRate')->numeric()->
+            lookAt($this->requiresFollowUp, 'requiresFollowUp')->bool()->
+            lookAt($this->paymentAccountUid, 'paymentAccountUid')->int()->
+            lookAt($this->dateCleared, 'dateCleared')->date()->
+            lookAt($this->fee, 'fee')->numeric()->
+            getErrors();
+    }
 }

@@ -1,6 +1,8 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
+use Dlin\Saasu\Validator\Validator;
+
 class QuickPayment extends EntityBase
 {
 
@@ -14,4 +16,19 @@ class QuickPayment extends EntityBase
     public $amount;
     public $reference;
     public $summary;
+
+
+    public function validate()
+    {
+
+        return Validator::instance()->
+            lookAt($this->datePaid, 'datePaid')->date()->required(true)->
+            lookAt($this->dateCleared, 'dateCleared')->date()->
+            lookAt($this->amount, 'amount')->numeric()->required(true)->
+            lookAt($this->bankedToAccountUid, 'bankedToAccountUid')->int()->required(true)->
+            lookAt($this->reference, 'reference')->length(0,50)->
+            lookAt($this->summary, 'summary')->length(0,75)->
+            getErrors();
+
+    }
 }

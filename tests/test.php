@@ -7,35 +7,16 @@
  * 
  */
 
-class A{
+$a = array();
+$a['a'] = 1;
+$a['b'] = 2;
 
-    private $a;
+//$arr = array();
 
-    public function __construct()
-    {
-        $this->a = 'hello';
-    }
+$arr[] = (true or false) ? 'yes':'no';
 
-    public function getA(){
-        return $this->a;
-    }
+$a['c'] = $arr;
 
+print_r($a);
 
-    public function __set($name, $value){
-        echo $this->getA();
-    }
-
-}
-
-
-class B extends  A{
-
-        public function __construct(){
-            parent::__construct();
-        }
-
-}
-
-
-$b = new B();
-$b->foo = 10;
+echo json_encode($a);

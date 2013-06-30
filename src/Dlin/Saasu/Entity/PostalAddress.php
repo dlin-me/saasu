@@ -2,6 +2,8 @@
 namespace Dlin\Saasu\Entity;
 
 
+use Dlin\Saasu\Validator\Validator;
+
 class PostalAddress extends EntityBase
 {
     public function __construct($uid=null){
@@ -14,4 +16,9 @@ class PostalAddress extends EntityBase
     public $state;
     public $postCode;
     public $country;
+
+    public function validate()
+    {
+        return array();
+    }
 }

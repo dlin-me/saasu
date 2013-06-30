@@ -3,7 +3,7 @@ namespace Dlin\Saasu\Entity;
 
 use Dlin\Saasu\Validator\Validator;
 
-class Invoice extends Transaction
+class Invoice extends EntityBase
 {
     public function  __construct($uid=null)
     {
@@ -37,6 +37,16 @@ class Invoice extends Transaction
     public $totalTaxAmount;
 
     public $autoPopulateFxRate;
+
+    public $date;
+    public $tags;
+    public $summary;
+    public $notes;
+    public $requiresFollowUp;
+    public $ccy;
+    public $fcToBcFxRate;
+
+
 
     public function validate($forUpdate = false)
     {
