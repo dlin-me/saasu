@@ -13,8 +13,6 @@ namespace Dlin\Saasu\Criteria;
 use Dlin\Saasu\Enum\AccountType;
 use Dlin\Saasu\Validator\Validator;
 
-
-
 class TransactionCategoryCriteria extends CriteriaBase
 {
 

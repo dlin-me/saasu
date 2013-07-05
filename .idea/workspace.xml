@@ -4,14 +4,14 @@
     <list default="true" id="85fd0be6-c3bf-4447-9320-d94e5da1353f" name="Default" comment="" />
     <ignored path="Saasu.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/EntityBaseTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371566263147" ignored="false" />
+    <file path="/EntityBaseTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372684558229" ignored="false" />
     <file path="/EntityBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372335655120" ignored="false" />
-    <file path="/a.dummy" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372599567287" ignored="false" />
+    <file path="/a.dummy" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372684642087" ignored="false" />
     <file path="/TaskBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1369749113457" ignored="false" />
     <file path="/TaskList.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371132304777" ignored="false" />
     <file path="/Task.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371132256770" ignored="false" />
     <file path="/ProxyBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1369832610621" ignored="false" />
-    <file path="/SaasuAPI.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371993680317" ignored="false" />
+    <file path="/SaasuAPI.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372946393968" ignored="false" />
     <file path="/InventoryAdjustmentResponse.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1369922132205" ignored="false" />
     <file path="/README.md" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371505884763" ignored="false" />
     <file path="/InventoryAdjustmentItem.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372335912949" ignored="false" />
@@ -49,7 +49,7 @@
     <file path="/InvoiceCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371477150223" ignored="false" />
     <file path="/TransactionCategoryCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371336599504" ignored="false" />
     <file path="/BaseEnum.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371218376135" ignored="false" />
-    <file path="/Validator.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371476441441" ignored="false" />
+    <file path="/Validator.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373032630224" ignored="false" />
     <file path="/AccountType.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371219017422" ignored="false" />
     <file path="/TransactionCategory.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372599548183" ignored="false" />
     <file path="/CriteriaBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371336568976" ignored="false" />
@@ -64,7 +64,7 @@
     <file path="/ContactCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371993416555" ignored="false" />
     <file path="/SearchFieldName.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371909223707" ignored="false" />
     <file path="/Tag.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371909570226" ignored="false" />
-    <file path="/TagCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371909686198" ignored="false" />
+    <file path="/TagCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372858546738" ignored="false" />
     <file path="/BankAccountCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371909736919" ignored="false" />
     <file path="/FullInventoryItemCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371993003671" ignored="false" />
     <file path="/ComboItemCriteria.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371993055451" ignored="false" />
@@ -81,6 +81,10 @@
     <file path="/InventoryTransfer.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372597549890" ignored="false" />
     <file path="/InvoicePayment.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372598008267" ignored="false" />
     <file path="/PostalAddress.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372598850446" ignored="false" />
+    <file path="/ActivityTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372947165212" ignored="false" />
+    <file path="/TagTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372947221691" ignored="false" />
+    <file path="/TestBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372947139380" ignored="false" />
+    <file path="/ValidatorTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373032220679" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,51 +107,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BaseEnum.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/BaseEnum.php">
+      <file leaf-file-name="ValidatorTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaasuAPI.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.7563453">
+            <state line="142" column="0" selection-start="8843" selection-end="8843" vertical-scroll-proportion="0.7352941">
               <folding>
-                <element signature="e#6#73#0" expanded="true" />
-                <element signature="e#99#136#0" expanded="true" />
+                <element signature="e#6#72#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityAttachedToType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/ActivityAttachedToType.php">
+      <file leaf-file-name="ActivityTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/AccountType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="17" selection-start="82" selection-end="93" vertical-scroll-proportion="-3.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionCategory.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/TransactionCategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="58" selection-start="656" selection-end="656" vertical-scroll-proportion="-15.625">
+            <state line="25" column="13" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.0833335">
               <folding>
-                <element signature="e#36#68#0" expanded="true" />
+                <element signature="e#42#83#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,48 +132,55 @@
       <file leaf-file-name="InventoryTransfer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransfer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="-9.833333">
+            <state line="32" column="24" selection-start="401" selection-end="754" vertical-scroll-proportion="-10.208333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagCriteria.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/TagCriteria.php">
+      <file leaf-file-name="SaasuAPI.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryTransferCriteria.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InventoryTransferCriteria.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeletedEntityCriteria.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/DeletedEntityCriteria.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="184" column="21" selection-start="4816" selection-end="4816" vertical-scroll-proportion="-12.083333">
               <folding>
-                <element signature="e#107#141#0" expanded="true" />
+                <element signature="e#6#73#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactCriteria.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/ContactCriteria.php">
+      <file leaf-file-name="InvoiceCriteria.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InvoiceCriteria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="19.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryAdjustmentCriteria.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InventoryAdjustmentCriteria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="5.4166665">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FullComboItemCriteria.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullComboItemCriteria.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-3.6666667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvoicePaymentCriteria.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InvoicePaymentCriteria.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <element signature="e#108#144#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,28 +195,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransfer.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItemItem.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryAdjustmentItem.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransferItem.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/ItemInvoiceItem.php" />
-        <option value="$PROJECT_DIR$/tests/test.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InvoicePayment.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InvoicePaymentItem.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/Invoice.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/Journal.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/JournalItem.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/PostalAddress.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/QuickPayment.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/ServiceInvoiceItem.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/TradingTerms.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/TransactionCategory.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransfer.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/TagCriteria.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Util/DateTime.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TestBase.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/EntityBaseTest.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TagTest.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InvoiceCriteria.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InventoryAdjustmentCriteria.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullComboItemCriteria.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Validator/Validator.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Unnamed" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="134" />
+    <option name="x" value="-6" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="820" />
@@ -307,6 +290,102 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPUnit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpunit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPUnit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -334,6 +413,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Validator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -389,6 +472,110 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Validator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Criteria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -405,24 +592,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Criteria" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Dlin/Saasu/Tests" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Entity" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Enum" />
-      <recent name="$PROJECT_DIR$/tests/Dlin/Saasu/Tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.test.php">
-    <configuration default="false" name="EntityBaseTest.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/EntityBaseTest.php">
-      <RunnerSettings RunnerId="PhpRunner" />
-      <RunnerSettings RunnerId="PhpScriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="PhpRunner" />
-      <ConfigurationWrapper RunnerId="PhpScriptDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.ValidatorTest">
     <configuration default="false" name="EntityBaseTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Dlin\Saasu\Tests\Entity\EntityBaseTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/EntityBaseTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
@@ -438,15 +619,20 @@
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="SaasuAPITest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Dlin\Saasu\Tests\SaasuAPITest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/SaasuAPITest.php" scope="Class" />
+    <configuration default="false" name="ActivityTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Dlin\Saasu\Tests\Entity\ActivityTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
-      <RunnerSettings RunnerId="PhpUnitDebugRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
-      <ConfigurationWrapper RunnerId="PhpUnitDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="SaasuAPI.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
+    <configuration default="false" name="TagTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Dlin\Saasu\Tests\Entity\TagTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TagTest.php" scope="Class" />
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValidatorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Dlin\Saasu\Tests\Validator\ValidatorTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
@@ -468,19 +654,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="PHP Script.EntityBaseTest.php" />
-      <item index="1" class="java.lang.String" itemvalue="PHPUnit.EntityBaseTest" />
-      <item index="2" class="java.lang.String" itemvalue="PHP Script.test.php" />
-      <item index="3" class="java.lang.String" itemvalue="PHPUnit.SaasuAPITest" />
-      <item index="4" class="java.lang.String" itemvalue="PHP Script.SaasuAPI.php" />
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.EntityBaseTest" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.test.php" />
+      <item index="2" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
+      <item index="3" class="java.lang.String" itemvalue="PHPUnit.TagTest" />
+      <item index="4" class="java.lang.String" itemvalue="PHPUnit.ValidatorTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.test.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.SaasuAPITest" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.ValidatorTest" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
         <item index="2" class="java.lang.String" itemvalue="PHPUnit.EntityBaseTest" />
-        <item index="3" class="java.lang.String" itemvalue="PHP Script.SaasuAPI.php" />
-        <item index="4" class="java.lang.String" itemvalue="PHP Script.EntityBaseTest.php" />
+        <item index="3" class="java.lang.String" itemvalue="PHPUnit.TagTest" />
+        <item index="4" class="java.lang.String" itemvalue="PHP Script.test.php" />
       </list>
     </recent_temporary>
   </component>
@@ -531,19 +717,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="22" width="1440" height="820" extended-state="0" />
-    <editor active="false" />
+    <frame x="-6" y="22" width="1440" height="820" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39857143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -625,123 +811,124 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceStatus.php">
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Util/DateTime.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="26" column="45" selection-start="460" selection-end="460" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceLayout.php">
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TestBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="33" column="0" selection-start="531" selection-end="531" vertical-scroll-proportion="-11.458333">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/IntervalType.php">
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TagTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/EntityTypeUid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/EmailFormat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/ContactCategoryType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/BaseEnum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/ActivityAttachedToType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/AccountType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="82" selection-end="93" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/TransactionCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="656" selection-end="656" vertical-scroll-proportion="-15.625">
+        <state line="12" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="-3.75">
           <folding>
-            <element signature="e#36#68#0" expanded="true" />
+            <element signature="e#111#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransfer.php">
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/EntityBaseTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="-9.833333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/TagCriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InventoryTransferCriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="17" column="29" selection-start="243" selection-end="243" vertical-scroll-proportion="-5.8333335">
+          <folding>
+            <element signature="e#43#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/DeletedEntityCriteria.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#107#141#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/ContactCriteria.php">
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullInventoryItemCriteria.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#108#144#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InvoicePaymentCriteria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InvoiceCriteria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="19.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/InventoryAdjustmentCriteria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="5.4166665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullComboItemCriteria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-3.6666667">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.7563453">
+        <state line="184" column="21" selection-start="4816" selection-end="4816" vertical-scroll-proportion="-12.083333">
           <folding>
             <element signature="e#6#73#0" expanded="true" />
-            <element signature="e#99#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.0833335">
+          <folding>
+            <element signature="e#42#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryTransfer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="24" selection-start="401" selection-end="754" vertical-scroll-proportion="-10.208333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Assert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="888" column="0" selection-start="28834" selection-end="28834" vertical-scroll-proportion="1.9240838">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Validator/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="345" column="0" selection-start="7693" selection-end="7693" vertical-scroll-proportion="3.748691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="0" selection-start="8843" selection-end="8843" vertical-scroll-proportion="0.7352941">
+          <folding>
+            <element signature="e#6#72#0" expanded="true" />
           </folding>
         </state>
       </provider>

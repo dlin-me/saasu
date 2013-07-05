@@ -68,6 +68,15 @@ class Validator
     }
 
 
+    /**
+     * Return all validation error
+     * @return array
+     */
+    public function hasError($field){
+        return isset($this->errors[$field]);
+    }
+
+
 
     /***************************************
      *
@@ -208,7 +217,8 @@ class Validator
         if (preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/', $datetime, $parts) == true) {
             $time = gmmktime($parts[4], $parts[5], $parts[6], $parts[2], $parts[3], $parts[1]);
 
-            $input_time = strtotime($date);
+            $input_dt = new \DateTime($datetime, new \DateTimeZone('GMT0'));
+            $input_time = $input_dt->getTimestamp();
             if ($input_time === false) return false;
 
             return $input_time == $time;
@@ -225,14 +235,17 @@ class Validator
      */
     private function validateDate($date)
     {
+
         if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $date, $parts) == true) {
             $time = gmmktime(0, 0, 0, $parts[2], $parts[3], $parts[1]);
 
-            $input_time = strtotime($date);
+            $input_dt = new \DateTime($date, new \DateTimeZone('GMT0'));
+            $input_time = $input_dt->getTimestamp();
             if ($input_time === false) return false;
 
             return $input_time == $time;
         } else {
+
             return false;
         }
     }
@@ -262,7 +275,7 @@ class Validator
      * Verify not greater than
      * @param $value
      */
-    public function nqt($value){
+    public function ngt($value){
         return $this->markErrorIf($this->value > $value);
     }
 
@@ -318,11 +331,14 @@ class Validator
      * @param $value
      */
     public function exnor($value) {
+
+
         if($this->value !== null){
             return $this->markErrorIf($value === null);
         }
         if($value !== null){
-            return $this->markErrorIf($this->value === null);
+
+            return $this->markErrorIf($this->value === null, false);
         }
         return $this;
     }

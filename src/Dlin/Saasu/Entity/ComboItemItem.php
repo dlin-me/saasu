@@ -9,7 +9,7 @@ class ComboItemItem extends EntityBase
     public function __construct($uid = null)
     {
         parent::__construct($uid);
-        $this->_entityName = "Item";
+        $this->_entityName = "item";
     }
 
     public $uid;

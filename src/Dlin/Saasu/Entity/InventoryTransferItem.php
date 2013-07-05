@@ -1,12 +1,13 @@
 <?php
 namespace Dlin\Saasu\Entity;
+
 use Dlin\Saasu\Validator\Validator;
 
 class InventoryTransferItem extends EntityBase
 {
     public function __construct($uid=null){
         parent::__construct($uid);
-        $this->_entityName = 'Item';
+        $this->_entityName = 'item';
     }
 
     public $quantity;

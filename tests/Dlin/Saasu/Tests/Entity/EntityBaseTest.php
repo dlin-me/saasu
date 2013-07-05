@@ -45,17 +45,9 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
         $billingContact->companyEmail = 'asdf@eewfas.com';
 
 
-        $entity = new Checkout();
-        $entity->uid = 123456;
-        $entity->paymentAmount = 123123;
-        $entity->emailReceipt = 'hello@sfdasd.com';
-        $entity->emailReceiptUsingTemplateUid = 123;
-        $entity->billingContact = $billingContact;
+        $xml = $billingContact->toXML();
 
-
-        $xml = $entity->toXML();
-
-        $entity2 = new Checkout();
+        $entity2 = new Contact();
 
         $entity2->fromXML($xml);
 
@@ -66,6 +58,6 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($xml, $var);
 
 
-        $this->assertEquals('checkout', $entity2->getName());
+        $this->assertEquals('contact', $entity2->getName());
     }
 }

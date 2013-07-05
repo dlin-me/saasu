@@ -10,7 +10,6 @@
 namespace Dlin\Saasu\Criteria;
 
 
-use Dlin\Saasu\Enum\SearchFieldName;
 use Dlin\Saasu\Validator\Validator;
 
 class ActivityCriteria extends CriteriaBase

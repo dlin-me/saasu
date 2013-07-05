@@ -1,5 +1,6 @@
 <?php
 namespace Dlin\Saasu\Entity;
+
 use Dlin\Saasu\Validator\Validator;
 
 class JournalItem extends EntityBase

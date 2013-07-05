@@ -40,10 +40,11 @@ class SaasuAPI
     public function checkException(Response $response)
     {
         $xml = $response->xml();
-        $exceptionXml = $xml->errors->error;
-        if ($exceptionXml) {
+        $exceptionXmls = $xml->xpath('//error');
+        foreach($exceptionXmls as $exceptionXml)
+        {
             $message = $exceptionXml->message;
-            throw new \Exception(strval($exceptionXml->type) . ': w' . $message);
+            throw new \Exception(strval($exceptionXml->type) . ' - ' . $message);
         }
 
         return $this;
@@ -53,8 +54,8 @@ class SaasuAPI
      *
      * Save changes of an existing entity or add a new entity to Saasu Service API
      *
-     * @param \Dlin\Saasu\Entity\EntityBase $entity
-     * @return \Dlin\Saasu\Task\TaskResult a TaskResult
+     * @param EntityBase $entity
+     * @return $this
      */
     public function saveEntity(\Dlin\Saasu\Entity\EntityBase $entity)
     {
@@ -204,7 +205,11 @@ class SaasuAPI
 
         $response = $this->client->get($url)->send();
 
-        $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName . 'ListItem'};
+        $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName};
+
+        if(!$entityXMLItems){
+            $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName. 'ListItem'};
+        }
 
         $res = array();
 

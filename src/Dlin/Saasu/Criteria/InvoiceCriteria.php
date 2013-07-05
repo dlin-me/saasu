@@ -10,7 +10,6 @@
 namespace Dlin\Saasu\Criteria;
 
 
-use DavidForest\SaasuBundle\Lib\Enum\TransactionType;
 use Dlin\Saasu\Enum\InvoiceStatus;
 use Dlin\Saasu\Enum\PaidStatus;
 use Dlin\Saasu\Validator\Validator;

@@ -2,8 +2,6 @@
 namespace Dlin\Saasu\Entity;
 
 
-use Dlin\Saasu\Validator\Validator;
-
 class PostalAddress extends EntityBase
 {
     public function __construct($uid=null){

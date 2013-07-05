@@ -12,7 +12,7 @@ namespace Dlin\Saasu\Criteria;
 
 use Dlin\Saasu\Validator\Validator;
 
-class TagCriteria {
+class TagCriteria extends CriteriaBase {
     public function getEntityClass()
     {
         return "Dlin\\Saasu\\Entity\\Tag";

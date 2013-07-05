@@ -24,7 +24,7 @@ class DateTime
      * Generate a datetime format string
      *
      *
-     * @param $time
+     * @param $time  timestamp or date string
      * @return string
      * @throws \Exception
      */
