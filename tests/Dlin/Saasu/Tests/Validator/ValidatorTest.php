@@ -10,6 +10,7 @@
 namespace Dlin\Saasu\Tests\Validator;
 
 
+use Dlin\Saasu\Entity\Activity;
 use Dlin\Saasu\Validator\Validator;
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase
@@ -139,4 +140,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
 
     }
+
+    
 }

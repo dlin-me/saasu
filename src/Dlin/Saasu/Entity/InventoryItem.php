@@ -45,6 +45,10 @@ class InventoryItem extends EntityBase
     public $vType;
     public $isVisible;
 
+    /**
+     * @param bool $forUpdate
+     * @return Validator
+     */
     public function validate($forUpdate = false)
     {
 
@@ -75,8 +79,7 @@ class InventoryItem extends EntityBase
             lookAt($this->isVisible, 'isVisible')->bool()->
             lookAt($this->isVoucher, 'isVoucher')->bool()->
             lookAt($this->validFrom, 'validFrom')->date()->
-            lookAt($this->validTo, 'validTo')->date()->
-            getErrors();
+            lookAt($this->validTo, 'validTo')->date();
 
     }
 

@@ -35,8 +35,7 @@ class ItemInvoiceItem extends EntityBase
             lookAt($this->totalAmountInclTax, 'totalAmountInclTax')->numeric()->
             lookAt($this->totalAmountExclTax, 'totalAmountExclTax')->numeric()->
             lookAt($this->totalTaxAmount, 'totalTaxAmount')->numeric()->
-            lookAt($this->percentageDiscount, 'percentageDiscount')->numeric()->
-            getErrors();
+            lookAt($this->percentageDiscount, 'percentageDiscount')->numeric();
 
     }
 }

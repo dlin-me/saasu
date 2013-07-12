@@ -29,8 +29,7 @@ class JournalItem extends EntityBase
         return Validator::instance()->
             lookAt($this->accountUid, 'accountUid')->int()->required(true)->
             lookAt($this->amount, 'amount')->numeric()->required(true)->
-            lookAt($this->type, 'type')->required(true)->
-            getErrors();
+            lookAt($this->type, 'type')->required(true);
 
     }
 

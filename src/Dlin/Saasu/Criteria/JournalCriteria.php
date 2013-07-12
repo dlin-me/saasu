@@ -41,8 +41,7 @@ class JournalCriteria extends CriteriaBase
             lookAt($this->excludeAnyTags, 'excludeAnyTags')->exor($this->excludeAllTags)->regex('/[\w]+(,[\w]+)*/')->
             lookAt($this->excludeAllTags, 'excludeAllTags')->exor($this->excludeAnyTags)->regex('/[\w]+(,[\w]+)*/')->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
-            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            getErrors();
+            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom);
 
     }
 

@@ -21,7 +21,6 @@ class EmailMessage extends EntityBase
     public function validate($forUpdate = false){
         return Validator::instance()->
             lookAt($this->from, 'from')->required(true)->
-            lookAt($this->to, 'to')->required(true)->
-            getErrors();
+            lookAt($this->to, 'to')->required(true);
     }
 }

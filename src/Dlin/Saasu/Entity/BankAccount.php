@@ -12,7 +12,10 @@ class BankAccount extends TransactionCategory
     public $accountNumber;
     public $merchantFeeAccountUid;
 
-
+    /**
+     * @param bool $forUpdate
+     * @return Validator
+     */
     public function validate($forUpdate = false)
     {
 
@@ -24,8 +27,7 @@ class BankAccount extends TransactionCategory
             lookAt($this->isActive, 'isActive')->bool()->
             lookAt($this->displayName, 'displayName')->required(true)->length(0,75)->
             lookAt($this->bsb, 'bsb')->length(0,6)->
-            lookAt($this->accountNumber, 'accountNumber')->length(0,20)->
-            getErrors();
+            lookAt($this->accountNumber, 'accountNumber')->length(0,20);
 
     }
 }

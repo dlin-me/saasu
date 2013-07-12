@@ -1,14 +1,9 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
-
-use Dlin\Saasu\Criteria\ActivityCriteria;
-use Dlin\Saasu\Criteria\TagCriteria;
-use Dlin\Saasu\Entity\Activity;
-
-
 use Dlin\Saasu\SaasuAPI;
 use Dlin\Saasu\Util\DateTime;
+
 
 /**
  *
@@ -28,7 +23,7 @@ class TestBase extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->api = new SaasuAPI('CAD81524A8BB4F1B9AEE163FC0D42E7B', '39594');
+        $this->api = new SaasuAPI('AA016FF771414F9D99E5708AFC65C5C2', '41509');
     }
 
 

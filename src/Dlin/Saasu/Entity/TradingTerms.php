@@ -29,8 +29,7 @@ class TradingTerms extends EntityBase
         return Validator::instance()->
             lookAt($this->type, 'type')->int()->required(true)->enum(1,2,3)->
             lookAt($this->interval, 'interval')->int()->
-            lookAt($this->intervalType, 'intervalType')->int()->enum(0,1,2,3)->
-            getErrors();
+            lookAt($this->intervalType, 'intervalType')->int()->enum(0,1,2,3);
 
     }
 }

@@ -198,12 +198,13 @@ class SaasuAPI
 
         $query = $criteria ? get_object_vars($criteria) : array();
         $fullClass = $criteria->getEntityClass();
-        $class = explode('\\', get_class($criteria));
-        $entityName = str_replace('Criteria', '', lcfirst(end($class)));
+        $class = explode('\\', $fullClass);
+        $entityName = lcfirst(array_pop($class));
 
         $url = $this->_buildURL($entityName . 'List', $query);
 
         $response = $this->client->get($url)->send();
+
 
         $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName};
 

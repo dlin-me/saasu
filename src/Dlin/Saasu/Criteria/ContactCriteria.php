@@ -45,8 +45,7 @@ class ContactCriteria extends CriteriaBase
             lookAt($this->isActive, 'isSent')->bool()->
             lookAt($this->searchFieldName, 'searchFieldName')->inArray(SearchFieldName::values())->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
-            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            getErrors();
+            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom);
 
     }
 

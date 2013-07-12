@@ -29,8 +29,7 @@ class InventoryTransfer extends EntityBase
             lookAt($this->uid, 'uid')->required($forUpdate)->int()->
             lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
             lookAt($this->summary, 'summary')->length(0, 75)->
-            lookAt($this->requiresFollowUp, 'requiresFollowUp')->bool()->
-            getErrors();
+            lookAt($this->requiresFollowUp, 'requiresFollowUp')->bool();
     }
 
 }

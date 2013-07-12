@@ -29,8 +29,7 @@ class ServiceInvoiceItem extends EntityBase
             lookAt($this->accountUid, 'accountUid')->int()->required(true)->
             lookAt($this->totalAmountInclTax, 'totalAmountInclTax')->numeric()->required(true)->
             lookAt($this->totalAmountExclTax, 'totalAmountExclTax')->numeric()->
-            lookAt($this->totalTaxAmount, 'totalTaxAmount')->numeric()->
-            getErrors();
+            lookAt($this->totalTaxAmount, 'totalTaxAmount')->numeric();
 
     }
 }

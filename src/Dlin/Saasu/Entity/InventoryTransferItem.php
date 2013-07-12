@@ -24,7 +24,6 @@ class InventoryTransferItem extends EntityBase
             lookAt($this->quantity, 'quantity')->required(true)->numeric()->
             lookAt($this->inventoryItemUid, 'inventoryItemUid')->required(true)->int()->
             lookAt($this->unitPriceExclTax, 'unitPriceExclTax')->required(true)->numeric()->
-            lookAt($this->totalPriceExclTax, 'totalPriceExclTax')->required(true)->numeric()->
-            getErrors();
+            lookAt($this->totalPriceExclTax, 'totalPriceExclTax')->required(true)->numeric();
     }
 }

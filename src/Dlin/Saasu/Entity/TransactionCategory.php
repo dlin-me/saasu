@@ -25,8 +25,7 @@ class TransactionCategory extends EntityBase
             lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
             lookAt($this->type, 'type')->length(0,50)->inArray(AccountType::values())->required(true)->
             lookAt($this->name, 'name')->length(1.75)->required(true)->
-            lookAt($this->isActive, 'isActive')->bool()->
-            getErrors();
+            lookAt($this->isActive, 'isActive')->bool();
 
     }
 }

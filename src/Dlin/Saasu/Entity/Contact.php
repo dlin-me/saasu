@@ -109,8 +109,7 @@ class Contact extends EntityBase
             lookAt($this->twitterID, 'twitterID')->length(0,100)->
             lookAt($this->skypeID, 'skypeID')->length(0,100)->
             lookAt($this->defaultSaleDiscount, 'defaultSaleDiscount')->numeric()->
-            lookAt($this->defaultPurchaseDiscount, 'defaultPurchaseDiscount')->numeric()->
-            getErrors();
+            lookAt($this->defaultPurchaseDiscount, 'defaultPurchaseDiscount')->numeric();
 
     }
 }

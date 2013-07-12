@@ -70,8 +70,7 @@ class Invoice extends EntityBase
             lookAt($this->status, 'status')->required(true)->enum('','Q','O','I')->
             lookAt($this->invoiceNumber, 'invoiceNumber')->length(0,50)->
             lookAt($this->purchaseOrderNumber, 'purchaseOrderNumber')->length(0,50)->
-            lookAt($this->isSent, 'isSent')->bool()->
-            getErrors();
+            lookAt($this->isSent, 'isSent')->bool();
 
     }
 

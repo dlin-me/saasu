@@ -25,8 +25,7 @@ class TagCriteria extends CriteriaBase {
     {
 
         return Validator::instance()->
-            lookAt($this->isActive, 'isActive')->bool()->
-            getErrors();
+            lookAt($this->isActive, 'isActive')->bool();
 
     }
 }

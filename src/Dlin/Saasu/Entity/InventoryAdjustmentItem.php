@@ -27,7 +27,6 @@ class InventoryAdjustmentItem extends EntityBase
             lookAt($this->inventoryItemUid, 'inventoryItemUid')->int()->
             lookAt($this->accountUid, 'accountUid')->int()->
             lookAt($this->unitPriceExclTax, 'unitPriceExclTax')->numeric()->
-            lookAt($this->totalPriceExclTax, 'totalPriceExclTax')->numeric()->
-            getErrors();
+            lookAt($this->totalPriceExclTax, 'totalPriceExclTax')->numeric();
     }
 }

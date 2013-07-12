@@ -17,7 +17,7 @@ class FullInventoryItemCriteria extends CriteriaBase
 
     public function getEntityClass()
     {
-        return "Dlin\\Saasu\\Entity\\FullInventoryItem";
+        return "Dlin\\Saasu\\Entity\\InventoryItem";
     }
 
 
@@ -34,8 +34,7 @@ class FullInventoryItemCriteria extends CriteriaBase
         return Validator::instance()->
             lookAt($this->isActive, 'isSent')->bool()->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
-            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            getErrors();
+            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom);
 
     }
 

@@ -27,8 +27,7 @@ class QuickPayment extends EntityBase
             lookAt($this->amount, 'amount')->numeric()->required(true)->
             lookAt($this->bankedToAccountUid, 'bankedToAccountUid')->int()->required(true)->
             lookAt($this->reference, 'reference')->length(0,50)->
-            lookAt($this->summary, 'summary')->length(0,75)->
-            getErrors();
+            lookAt($this->summary, 'summary')->length(0,75);
 
     }
 }

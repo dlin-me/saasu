@@ -32,8 +32,7 @@ class FullComboItemCriteria extends CriteriaBase
         return Validator::instance()->
             lookAt($this->isActive, 'isSent')->bool()->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
-            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            getErrors();
+            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom);
 
     }
 

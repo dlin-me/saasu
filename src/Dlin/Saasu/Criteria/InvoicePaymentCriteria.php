@@ -39,8 +39,7 @@ class InvoicePaymentCriteria extends CriteriaBase
             lookAt($this->dateClearedTo, 'dateClearedTo')->date()->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
             lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            lookAt($this->bankAccountUid, 'bankAccountUid')->int()->
-            getErrors();
+            lookAt($this->bankAccountUid, 'bankAccountUid')->int();
 
     }
 

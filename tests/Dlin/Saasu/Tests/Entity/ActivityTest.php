@@ -20,12 +20,23 @@ class ActivityTest extends TestBase
 {
 
 
+
+    public function testValidation(){
+
+        $a = new Activity();
+        $this->assertTrue($a->validate()->hasError());
+        $this->assertTrue($a->validate()->hasError('type'));
+        $this->assertTrue($a->validate()->hasError('title'));
+        $a->type="Sale";
+        $this->assertFalse($a->validate()->hasError('type'));
+        $a->title="Title";
+        $this->assertFalse($a->validate()->hasError('title'));
+        $this->assertFalse($a->validate()->hasError());
+
+    }
+
     public function testActivity()
     {
-        //get a list of activies;
-        $activities = $this->api->searchEntities(new ActivityCriteria());
-        $this->assertEquals(0, count($activities));
-
 
         //just randomly get a tag
         $tags = $this->api->searchEntities(new TagCriteria());
@@ -41,6 +52,11 @@ class ActivityTest extends TestBase
 
         $this->assertGreaterThan(0, $activity->uid);
 
+        //test update
+        $activity->title = "That is a test asdfxxx activity";
+        $this->api->saveEntity($activity);
+
+
         //test load/get
         $newActivity = new Activity();
         $newActivity->uid = $activity->uid;
@@ -50,11 +66,15 @@ class ActivityTest extends TestBase
         $this->assertEquals($activity->details, $newActivity->details);
         $this->assertEquals($activity->owner, $newActivity->owner);
 
+
+
         //test search
         $criteria = new ActivityCriteria();
-        $criteria->search = "asdfxxx";
+        $criteria->search = "asdfxx";
 
         $results = $this->api->searchEntities($criteria);
+
+
         $found = reset($results);
 
         $this->assertNotNull($found);

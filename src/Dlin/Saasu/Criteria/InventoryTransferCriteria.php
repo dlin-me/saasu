@@ -33,8 +33,7 @@ class InventoryTransferCriteria extends CriteriaBase
             lookAt($this->dateFrom, 'dateFrom;')->dateTime()->
             lookAt($this->dateTo, 'dateTo;')->dateTime()->
             lookAt($this->utcLastModifiedFrom, 'utcLastModifiedFrom;')->dateTime()->exnor($this->utcLastModifiedTo)->
-            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom)->
-            getErrors();
+            lookAt($this->utcLastModifiedTo, 'utcLastModifiedTo')->dateTime()->exnor($this->utcLastModifiedFrom);
 
     }
 

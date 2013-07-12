@@ -21,8 +21,7 @@ class ComboItemItem extends EntityBase
 
         return Validator::instance()->
             lookAt($this->uid, 'uid')->int()->
-            lookAt($this->quantity, 'quantity')->numeric()->
-            getErrors();
+            lookAt($this->quantity, 'quantity')->numeric();
 
     }
 

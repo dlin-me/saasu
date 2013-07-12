@@ -19,7 +19,6 @@ class InvoicePaymentItem extends EntityBase
 
         return Validator::instance()->
             lookAt($this->invoiceUid, 'invoiceUid')->required(true)->int()->
-            lookAt($this->amount, 'amount')->required(true)->numeric()->
-            getErrors();
+            lookAt($this->amount, 'amount')->required(true)->numeric();
     }
 }

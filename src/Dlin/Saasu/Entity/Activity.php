@@ -38,7 +38,10 @@ class Activity extends EntityBase
     public $attachedToType;
     public $attachedToUid; //int
 
-
+    /**
+     * @param bool $forUpdate
+     * @return Validator
+     */
     public function validate($forUpdate = false)
     {
 
@@ -46,15 +49,15 @@ class Activity extends EntityBase
             lookAt($this->uid, 'uid')->required($forUpdate)->int()->
             lookAt($this->lastUpdatedUid, 'lastUpdatedUid')->required($forUpdate)->int()->
             lookAt($this->utcFirstCreated, 'utcFirstCreated')->dateTime()->
-            lookAt($this->type, 'type')->required()->length(1)->
+            lookAt($this->type, 'type')->required(true)->length(1)->
             lookAt($this->done, 'done')->enum('true', 'false')->
-            lookAt($this->title, 'title')->required()->length(1, 128)->
+            lookAt($this->title, 'title')->required(true)->length(1, 128)->
             lookAt($this->details, 'details')->
             lookAt($this->due, 'due')->date()->
             lookAt($this->lastModified, 'lastModified')->dateTime()->
             lookAt($this->owner, 'owner')->email()->
             lookAt($this->attachedToType, 'attachedToType')->enum('Contact', 'Sale', 'Purchase', 'Employee')->
-            lookAt($this->attachedToUid, 'attachedToUid')->int()->getErrors();
+            lookAt($this->attachedToUid, 'attachedToUid')->int();
 
     }
 }

@@ -70,10 +70,14 @@ class Validator
 
     /**
      * Return all validation error
-     * @return array
+     * @param null $field
+     * @return bool
      */
-    public function hasError($field){
-        return isset($this->errors[$field]);
+    public function hasError($field=null){
+        if($field == null){
+            return count($this->errors) > 0;
+        }
+        return array_key_exists($field, $this->errors);
     }
 
 

@@ -41,7 +41,6 @@ class InvoicePayment extends EntityBase
             lookAt($this->requiresFollowUp, 'requiresFollowUp')->bool()->
             lookAt($this->paymentAccountUid, 'paymentAccountUid')->int()->
             lookAt($this->dateCleared, 'dateCleared')->date()->
-            lookAt($this->fee, 'fee')->numeric()->
-            getErrors();
+            lookAt($this->fee, 'fee')->numeric();
     }
 }
