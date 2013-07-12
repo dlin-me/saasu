@@ -1,6 +1,8 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
+use Dlin\Saasu\Task\Task;
+
 class EntityBase
 
 {
@@ -44,7 +46,16 @@ class EntityBase
 
     }
 
-
+    /**
+     * This is used by the api when saving an entity;
+     * By default if the entity being saved dose not have a UID, new entity will be created;
+     * If the entity has already got a UID,  an existing entity will be updated;
+     * However, the entity could override this behavior by overriding this method. E.g. BuildComboItem operation
+     *
+     */
+    public function getSaveOperationName(){
+        return $this->uid ? Task::TASK_TYPE_UPDATE : Task::TASK_TYPE_INSERT;
+    }
 
 
     /**

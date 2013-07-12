@@ -92,9 +92,11 @@ class SaasuAPI
     public function saveEntities(array $entities)
     {
         $taskList = new TaskList();
-
+        /**
+         * @var \Dlin\Saasu\Entity\EntityBase $entity
+         */
         foreach ($entities as $entity) {
-            $type = $entity->uid ? Task::TASK_TYPE_UPDATE : Task::TASK_TYPE_INSERT;
+            $type = $entity->getSaveOperationName();
             $task = new Task($type, $entity);
             $taskList->add($task);
         }

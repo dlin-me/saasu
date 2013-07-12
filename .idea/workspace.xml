@@ -5,7 +5,7 @@
     <ignored path="Saasu.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/EntityBaseTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372684558229" ignored="false" />
-    <file path="/EntityBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1372335655120" ignored="false" />
+    <file path="/EntityBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373635778164" ignored="false" />
     <file path="/a.dummy" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373287408980" ignored="false" />
     <file path="/TaskBase.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1369749113457" ignored="false" />
     <file path="/TaskList.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1371132304777" ignored="false" />
@@ -87,8 +87,9 @@
     <file path="/ValidatorTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373287759958" ignored="false" />
     <file path="/BankAccountTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373290120886" ignored="false" />
     <file path="/*.regexp" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373287377192" ignored="false" />
-    <file path="/ComboItemTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373290282275" ignored="false" />
+    <file path="/ComboItemTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373635016926" ignored="false" />
     <file path="/InventoryItemTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373632707173" ignored="false" />
+    <file path="/BuildComboItem.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1373635971027" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <file leaf-file-name="SaasuAPI.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="0" selection-start="5356" selection-end="5356" vertical-scroll-proportion="-1.38">
+            <state line="98" column="49" selection-start="2566" selection-end="2586" vertical-scroll-proportion="-3.36">
               <folding>
                 <element signature="e#6#73#0" expanded="true" />
               </folding>
@@ -122,41 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FullInventoryItemCriteria.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullInventoryItemCriteria.php">
+      <file leaf-file-name="Task.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Task/Task.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="-4.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BankAccountTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/BankAccountTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="48" selection-start="1165" selection-end="2681" vertical-scroll-proportion="-3.164557">
-              <folding>
-                <element signature="e#42#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="951" selection-end="951" vertical-scroll-proportion="-13.125">
-              <folding>
-                <element signature="e#42#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryAdjustment.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryAdjustment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="-3.0833333">
+            <state line="67" column="44" selection-start="1082" selection-end="1082" vertical-scroll-proportion="-6.4166665">
               <folding />
             </state>
           </provider>
@@ -165,9 +135,47 @@
       <file leaf-file-name="InventoryItemTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/InventoryItemTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="1967" selection-end="1967" vertical-scroll-proportion="-2.5696204">
+            <state line="74" column="0" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-2.5696204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComboItemTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ComboItemTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="25" selection-start="856" selection-end="856" vertical-scroll-proportion="-2.4683545">
               <folding>
                 <element signature="e#42#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tag.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/Tag.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityBase.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/EntityBase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="40" selection-start="1455" selection-end="1475" vertical-scroll-proportion="-12.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildComboItem.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/BuildComboItem.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="33" selection-start="767" selection-end="767" vertical-scroll-proportion="0.46835443">
+              <folding>
+                <element signature="e#104#129#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,10 +190,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComboItem.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ComboItem.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="32" selection-start="106" selection-end="106" vertical-scroll-proportion="0.18987341">
+            <state line="5" column="32" selection-start="106" selection-end="106" vertical-scroll-proportion="-3.125">
               <folding />
             </state>
           </provider>
@@ -193,15 +201,6 @@
       </file>
       <file leaf-file-name="ComboItemItem.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItemItem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TagTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TagTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
@@ -219,8 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/Activity.php" />
-        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/Journal.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/ActivityCriteria.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/ContactCriteria.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullComboItemCriteria.php" />
@@ -229,12 +226,14 @@
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/BankAccount.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Validator/Validator.php" />
         <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/BankAccountTest.php" />
-        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ComboItemTest.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/InventoryItem.php" />
         <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/InventoryItemTest.php" />
         <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TestBase.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullInventoryItemCriteria.php" />
+        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ComboItemTest.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/EntityBase.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php" />
+        <option value="$PROJECT_DIR$/src/Dlin/Saasu/Entity/BuildComboItem.php" />
       </list>
     </option>
   </component>
@@ -570,6 +569,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dlin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -616,9 +641,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Entity" />
       <recent name="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity" />
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Criteria" />
-      <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/Dlin/Saasu/Tests" />
@@ -627,7 +652,7 @@
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Enum" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ActivityTest">
+  <component name="RunManager" selected="PHPUnit.ComboItemTest">
     <configuration default="false" name="ActivityTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Dlin\Saasu\Tests\Entity\ActivityTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
@@ -683,10 +708,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.BankAccountTest" />
-        <item index="2" class="java.lang.String" itemvalue="PHPUnit.InventoryItemTest" />
-        <item index="3" class="java.lang.String" itemvalue="PHPUnit.ComboItemTest" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.ComboItemTest" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
+        <item index="2" class="java.lang.String" itemvalue="PHPUnit.BankAccountTest" />
+        <item index="3" class="java.lang.String" itemvalue="PHPUnit.InventoryItemTest" />
         <item index="4" class="java.lang.String" itemvalue="PHPUnit.ValidatorTest" />
       </list>
     </recent_temporary>
@@ -739,14 +764,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="22" width="1440" height="820" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39857143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -832,79 +857,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Assert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="900" column="0" selection-start="29165" selection-end="29165" vertical-scroll-proportion="-5.2916665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/BankAccountCriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="21" selection-start="279" selection-end="289" vertical-scroll-proportion="0.2658228">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/EntityBaseTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="11.041667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/TestBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="67" selection-start="398" selection-end="398" vertical-scroll-proportion="-9.583333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/CriteriaBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="123" selection-end="123" vertical-scroll-proportion="0.2278481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullComboItemCriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="151" selection-end="172" vertical-scroll-proportion="-5.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Criteria/FullInventoryItemCriteria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="0" selection-start="5356" selection-end="5356" vertical-scroll-proportion="-1.38">
-          <folding>
-            <element signature="e#6#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/BankAccountTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="48" selection-start="1165" selection-end="2681" vertical-scroll-proportion="-3.164557">
-          <folding>
-            <element signature="e#42#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/InventoryItemTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="1967" selection-end="1967" vertical-scroll-proportion="-2.5696204">
-          <folding>
-            <element signature="e#42#88#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -918,9 +874,7 @@
     <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="0" selection-start="951" selection-end="951" vertical-scroll-proportion="-13.125">
-          <folding>
-            <element signature="e#42#83#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -938,6 +892,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="32" selection-start="106" selection-end="106" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItemItem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -945,10 +906,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/ComboItem.php">
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/InventoryItemTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="106" selection-end="106" vertical-scroll-proportion="0.18987341">
+        <state line="74" column="0" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-2.5696204">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ComboItemTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="25" selection-start="856" selection-end="856" vertical-scroll-proportion="-2.4683545">
+          <folding>
+            <element signature="e#42#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/BankAccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="5" selection-start="232" selection-end="982" vertical-scroll-proportion="1.1772152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/EmailMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="4" selection-start="298" selection-end="499" vertical-scroll-proportion="0.75949365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Task/Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="44" selection-start="1082" selection-end="1082" vertical-scroll-proportion="-6.4166665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/EntityBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="40" selection-start="1455" selection-end="1475" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/SaasuAPI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="49" selection-start="2566" selection-end="2586" vertical-scroll-proportion="-3.36">
+          <folding>
+            <element signature="e#6#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/BuildComboItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="33" selection-start="767" selection-end="767" vertical-scroll-proportion="0.46835443">
+          <folding>
+            <element signature="e#104#129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,8 +1,9 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
-use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
-use Dlin\Saasu\Entity\InventoryItem;
+use Dlin\Saasu\Criteria\FullComboItemCriteria;
+use Dlin\Saasu\Entity\ComboItem;
+use Dlin\Saasu\Entity\ComboItemItem;
 use Dlin\Saasu\Util\DateTime;
 
 
@@ -15,12 +16,12 @@ use Dlin\Saasu\Util\DateTime;
  */
 
 
-class InventoryItemTest extends TestBase
+class ComboItemTest extends TestBase
 {
 
     public function testValidation(){
 
-        $a = new InventoryItem();
+        $a = new ComboItem();
         $this->assertTrue($a->validate()->hasError());
         $this->assertTrue($a->validate()->hasError('code'));
         $a->code = uniqid();
@@ -29,15 +30,21 @@ class InventoryItemTest extends TestBase
         $a->description = "this is a description only";
         $this->assertFalse($a->validate()->hasError('description'));
 
+        $i  = new ComboItemItem();
+        $i->code = 1234;
+        $i->quantity = 0;
+
 
     }
 
 
-    public function testInventoryItem()
+    public function testComboItem()
     {
+
+        return;
         $code = uniqid();
         //test add
-        $item = new InventoryItem();
+        $item = new ComboItem();
         $item->code = $code;
         $item->description = "This is just a test only";
         $item->isActive = 'true';
@@ -58,7 +65,7 @@ class InventoryItemTest extends TestBase
         $this->api->saveEntity($item);
 
         //test load/get
-        $newItem = new InventoryItem();
+        $newItem = new ComboItem();
         $newItem->uid = $item->uid;
         $this->api->loadEntity($newItem);
 
@@ -68,7 +75,7 @@ class InventoryItemTest extends TestBase
 
 
         //test search
-        $criteria = new FullInventoryItemCriteria();
+        $criteria = new FullComboItemCriteria();
         $criteria->descriptionBeginsWith = 'This is';
 
         $results = $this->api->searchEntities($criteria);
