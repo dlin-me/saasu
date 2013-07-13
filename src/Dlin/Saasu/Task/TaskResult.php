@@ -29,7 +29,8 @@ class TaskResult extends EntityBase
 
 
 
-    public function updateEntity(EntityBase $entity){
+    public function updateEntity(EntityBase &$entity){
+
 
         if($this->lastUpdatedUid){
             $entity->lastUpdatedUid = $this->lastUpdatedUid;

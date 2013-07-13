@@ -138,8 +138,13 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(Validator::instance()->lookAt('ok', 'exnor')->exnor('oks')->hasError('exnor'));
         $this->assertTrue(Validator::instance()->lookAt(null, 'exnor')->exnor('ok')->hasError('exnor'));
 
-
+        //countArray
+        $this->assertTrue(Validator::instance()->lookAt(null, 'countArray')->countArray(1,4)->hasError('countArray'));
+        $this->assertTrue(Validator::instance()->lookAt('value', 'countArray')->countArray(1,4)->hasError('countArray'));
+        $this->assertTrue(Validator::instance()->lookAt(array(), 'countArray')->countArray(1,4)->hasError('countArray'));
+        $this->assertTrue(Validator::instance()->lookAt(array(1,2,3,4,4), 'countArray')->countArray(1,4)->hasError('countArray'));
+        $this->assertFalse(Validator::instance()->lookAt(array(1,24,4), 'countArray')->countArray(1,4)->hasError('countArray'));
     }
 
-    
+
 }

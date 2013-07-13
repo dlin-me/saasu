@@ -59,5 +59,15 @@ class EntityBaseTest extends \PHPUnit_Framework_TestCase
 
 
         $this->assertEquals('contact', $entity2->getName());
+
+
+
+
+
+
+
+
+
+
     }
 }

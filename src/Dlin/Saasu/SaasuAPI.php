@@ -65,6 +65,8 @@ class SaasuAPI
         $taskList->add($task);
         $xml = $taskList->toXML();
 
+
+
         $url = $this->_buildURL('Tasks', array());
 
         $response = $this->client->post($url, null, $xml)->send();

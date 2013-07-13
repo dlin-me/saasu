@@ -14,6 +14,9 @@ class EntityBase
     //name of the entity
     protected  $_entityName;
 
+
+
+
     /**
      * Extra data holder, if Saasu web service return extra fields.
      *
@@ -43,6 +46,8 @@ class EntityBase
         $class = explode('\\', get_class($this));
         $this->_entityName = lcfirst(end($class));
         $this->_extraData = array();
+        $this->_uidPosition = 'attribute';
+        $this->_arrayElementTypes = array();
 
     }
 
@@ -69,6 +74,43 @@ class EntityBase
     {
         return $this->_entityName;
     }
+
+
+    //Sassu is very inconsistent on uid placement, some entities need it
+    //be attribute, others need it be child element
+    protected  $_uidPosition;
+
+    /**
+     *This is used to decide in XML output, the UID is format as an attribute or a child element
+     *
+     * @return string
+     */
+    public function getUidPlacement()
+    {
+        return $this->_uidPosition == 'attribute' ? 'attribute':'element';
+    }
+
+
+    /**
+     * @var array
+     */
+    protected $_arrayElementTypes;
+
+    /**
+     * If the entity has a field of array type, this will work out what is the type of the elements in that array
+     *
+     * @param $name
+     * @return mixed
+     */
+    public function getArrayElementType($name)
+    {
+        return  array_key_exists($name ,$this->_arrayElementTypes) ? $this->_arrayElementTypes[$name] : null;
+    }
+
+
+
+
+
 
 
     /**
@@ -111,7 +153,7 @@ class EntityBase
                     $oXMLout->startElement($key);
                     foreach ($value as $subValue) {
                         if ($subValue instanceof EntityBase) {
-                            $func($subValue);
+                            $func($subValue, $subValue->getName());
                         }
                     }
                     $oXMLout->endElement();
@@ -119,7 +161,7 @@ class EntityBase
                 } elseif ($value instanceof EntityBase) {
                     $func($value, $key);
 
-                } elseif ($key == 'uid' || $key == 'lastUpdatedUid') {
+                } elseif (($key == 'uid' || $key == 'lastUpdatedUid') && $obj->getUidPlacement() == 'attribute') {
                     if ($value != '') {
                         $oXMLout->writeAttribute($key, $value);
                     }
@@ -180,10 +222,14 @@ class EntityBase
 
                         foreach ($sub as $child) {
                             foreach ($child as $cname => $c) {
-                                $subClass = __NAMESPACE__ . '\\' . ucfirst($cname);
-                                $obj = new $subClass();
-                                $func($c, $obj);
-                                $entity->{$fieldName}[] = $obj;
+                                if($entity->getArrayElementType($cname) === null){
+                                    $entity->{$fieldName}[] = $c;
+                                }else{
+                                    $subClass = __NAMESPACE__ . '\\' . ucfirst($entity->getArrayElementType($cname));
+                                    $obj = new $subClass();
+                                    $func($c, $obj);
+                                    $entity->{$fieldName}[] = $obj;
+                                }
                             }
                         }
 

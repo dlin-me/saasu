@@ -65,7 +65,7 @@ class Task
      * Constructor
      * @param $type
      */
-    public function __construct($type, EntityBase $entity)
+    public function __construct($type, EntityBase &$entity)
     {
 
 

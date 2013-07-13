@@ -163,6 +163,21 @@ class Validator
 
 
     /**
+     * Verify the count of the array value is within the range
+     *
+     * @param $min
+     * @param int $max
+     * @return $this
+     */
+    public function countArray($min, $max = PHP_INT_MAX)
+    {
+        return $this->markErrorIf(!is_array($this->value)||count($this->value) < $min || count($this->value) > $max, false);
+    }
+
+
+
+
+    /**
      * Verify a email string value
      *
      * @return $this

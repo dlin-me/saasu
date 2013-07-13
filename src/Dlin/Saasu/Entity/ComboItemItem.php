@@ -10,6 +10,7 @@ class ComboItemItem extends EntityBase
     {
         parent::__construct($uid);
         $this->_entityName = "item";
+        $this->_uidPosition = "element";
     }
 
     public $uid;
