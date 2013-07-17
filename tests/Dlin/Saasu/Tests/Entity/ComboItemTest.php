@@ -1,11 +1,17 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
+use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\FullComboItemCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
+use Dlin\Saasu\Entity\BuildComboItem;
 use Dlin\Saasu\Entity\ComboItem;
 use Dlin\Saasu\Entity\ComboItemItem;
 use Dlin\Saasu\Entity\InventoryItem;
+
+
+use Dlin\Saasu\Enum\AccountType;
+use Dlin\Saasu\Enum\TaxCode;
 use Dlin\Saasu\Util\DateTime;
 
 
@@ -22,6 +28,7 @@ class ComboItemTest extends TestBase
 {
 
     public function testValidation(){
+
 
         $a = new ComboItem();
         $this->assertTrue($a->validate()->hasError());
@@ -60,36 +67,45 @@ class ComboItemTest extends TestBase
 
 
 
+
+        $assetAccount = $this->getTestBankAccount(AccountType::Asset);
+        $this->api->saveEntity($assetAccount);
+
+        $incomeAccount = $this->getTestBankAccount(AccountType::Income);
+        $this->api->saveEntity($incomeAccount);
+
+        $cosAccount = $this->getTestBankAccount(AccountType::CostOfSales);
+        $this->api->saveEntity($cosAccount);
+
         //try creating comboitem without item
 
         $code = uniqid();
         //test add
-        $item = new ComboItem();
-        $item->code = $code;
-        $item->description = "This is just a test only";
-        $item->isActive = 'true';
-        $item->buyingPrice = 100;
-        $item->sellingPrice = 200;
+        $item =  $this->getTestComboItem($code, "This is just a test only");
+        $item->buyingPrice = 300;
+        $item->sellingPrice = 400;
 
         $this->assertTrue($item->validate()->hasError('items'));
 
 
-        //Ok, must give it two items
-        $i1  = new InventoryItem();
-        $i1->code = "TESTFORINVENTORYITEM_1";
-        $i1->description = "This is just a test only";
-        $i1->isActive = 'true';
-        $i1->isVirtual = 'true';
-        $i1->buyingPrice = 100;
-        $i1->sellingPrice = 200;
 
-        $i2  = new InventoryItem();
-        $i2->code = "TESTFORINVENTORYITEM_2";
-        $i2->description = "This is just a test only";
-        $i2->isActive = 'true';
-        $i2->isVirtual = 'true';//must be either virtual or inventories
-        $i2->buyingPrice = 200;
-        $i2->sellingPrice = 300;
+        $item->assetAccountUid = $assetAccount->uid;
+        $item->saleIncomeAccountUid = $incomeAccount->uid;
+        $item->saleCoSAccountUid =$cosAccount->uid;
+
+
+
+        $i1 = $this->getTestInventoryItem(uniqid(), 'This is just a test only');
+
+        $i1->assetAccountUid = $assetAccount->uid;
+        $i1->saleIncomeAccountUid = $incomeAccount->uid;
+        $i1->saleCoSAccountUid =$cosAccount->uid;
+
+
+        $i2 = $this->getTestInventoryItem(uniqid(), 'This is just a test only');
+        $i2->assetAccountUid = $assetAccount->uid;
+        $i2->saleIncomeAccountUid = $incomeAccount->uid;
+        $i2->saleCoSAccountUid =$cosAccount->uid;
 
         $this->api->saveEntities(array($i1, $i2));
 
@@ -131,9 +147,18 @@ class ComboItemTest extends TestBase
         $this->assertEquals($item->sellingPrice, $newItem->sellingPrice);
 
 
+        //test building
+        $build= new BuildComboItem();
+        $build->uid = $item->uid;
+        $build->quantity = 5;
+        $this->api->saveEntity($build);
+
+
+
         $this->api->deleteEntity($item);
         $this->api->deleteEntity($i1);
         $this->api->deleteEntity($i2);
+
 
         //check if they are really deleted;
         $criteria = new FullInventoryItemCriteria();
@@ -141,13 +166,15 @@ class ComboItemTest extends TestBase
         $results = $this->api->searchEntities($criteria);
         $this->assertEquals(0, count($results));
 
+
+
         $criteria = new FullComboItemCriteria();
         $criteria->codeBeginsWith = 'This is';
         $results = $this->api->searchEntities($criteria);
         $this->assertEquals(0, count($results));
 
 
-
+        $this->removeTestBankAccounts();
 
 
 

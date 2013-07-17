@@ -1,8 +1,10 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
+use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
 use Dlin\Saasu\Entity\InventoryItem;
+use Dlin\Saasu\Enum\AccountType;
 use Dlin\Saasu\Util\DateTime;
 
 
@@ -37,12 +39,20 @@ class InventoryItemTest extends TestBase
     {
         $code = uniqid();
         //test add
-        $item = new InventoryItem();
-        $item->code = $code;
-        $item->description = "This is just a test only";
-        $item->isActive = 'true';
-        $item->buyingPrice = 100;
-        $item->sellingPrice = 200;
+        $item = $this->getTestInventoryItem($code, "This is just a test only");
+
+        $assetAccount = $this->getTestBankAccount(AccountType::Asset);
+        $this->api->saveEntity($assetAccount);
+
+        $incomeAccount = $this->getTestBankAccount(AccountType::Income);
+        $this->api->saveEntity($incomeAccount);
+
+        $cosAccount = $this->getTestBankAccount(AccountType::CostOfSales);
+        $this->api->saveEntity($cosAccount);
+
+        $item->assetAccountUid = $assetAccount->uid;
+        $item->saleIncomeAccountUid = $incomeAccount->uid;
+        $item->saleCoSAccountUid =$cosAccount->uid;
 
 
         $this->assertFalse($item->validate()->hasError());
@@ -84,7 +94,7 @@ class InventoryItemTest extends TestBase
         $results = $this->api->searchEntities($criteria);
         $this->assertEquals(0, count($results));
 
-
+        $this->removeTestBankAccounts();
 
     }
 }

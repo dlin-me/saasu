@@ -1,61 +1,5 @@
 [
     {
-        "name": "symfony/event-dispatcher",
-        "version": "v2.2.1",
-        "version_normalized": "2.2.1.0",
-        "target-dir": "Symfony/Component/EventDispatcher",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "v2.2.1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.2.1",
-            "reference": "v2.2.1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/dependency-injection": ">=2.0,<3.0"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "2.2.*",
-            "symfony/http-kernel": "2.2.*"
-        },
-        "time": "2013-02-11 11:26:43",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\EventDispatcher\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "guzzle/guzzle",
         "version": "v3.3.1",
         "version_normalized": "3.3.1.0",
@@ -149,55 +93,6 @@
             "rest",
             "web service"
         ]
-    },
-    {
-        "name": "symfony/yaml",
-        "version": "v2.2.1",
-        "version_normalized": "2.2.1.0",
-        "target-dir": "Symfony/Component/Yaml",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Yaml.git",
-            "reference": "v2.2.1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.2.1",
-            "reference": "v2.2.1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2013-03-23 07:49:54",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Yaml\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "http://symfony.com"
     },
     {
         "name": "phpunit/php-text-template",
@@ -437,18 +332,67 @@
         ]
     },
     {
-        "name": "phpunit/php-code-coverage",
-        "version": "1.2.11",
-        "version_normalized": "1.2.11.0",
+        "name": "symfony/yaml",
+        "version": "v2.3.1",
+        "version_normalized": "2.3.1.0",
+        "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
-            "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-            "reference": "1.2.11"
+            "url": "https://github.com/symfony/Yaml.git",
+            "reference": "v2.3.1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/1.2.11",
-            "reference": "1.2.11",
+            "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.3.1",
+            "reference": "v2.3.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-05-10 18:12:13",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Yaml\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "phpunit/php-code-coverage",
+        "version": "1.2.12",
+        "version_normalized": "1.2.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+            "reference": "1.2.12"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/1.2.12",
+            "reference": "1.2.12",
             "shasum": ""
         },
         "require": {
@@ -458,14 +402,19 @@
             "phpunit/php-token-stream": ">=1.1.3@stable"
         },
         "require-dev": {
-            "phpunit/phpunit": "3.7.*"
+            "phpunit/phpunit": "3.7.*@dev"
         },
         "suggest": {
             "ext-dom": "*",
             "ext-xdebug": ">=2.0.5"
         },
-        "time": "2013-05-23 18:23:24",
+        "time": "2013-07-06 06:26:16",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "classmap": [
@@ -496,17 +445,17 @@
     },
     {
         "name": "phpunit/phpunit",
-        "version": "3.7.21",
-        "version_normalized": "3.7.21.0",
+        "version": "3.7.22",
+        "version_normalized": "3.7.22.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "3.7.21"
+            "reference": "3.7.22"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3.7.21",
-            "reference": "3.7.21",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3.7.22",
+            "reference": "3.7.22",
             "shasum": ""
         },
         "require": {
@@ -515,12 +464,12 @@
             "ext-reflection": "*",
             "ext-spl": "*",
             "php": ">=5.3.3",
-            "phpunit/php-code-coverage": ">=1.2.1,<1.3.0",
+            "phpunit/php-code-coverage": "~1.2.1",
             "phpunit/php-file-iterator": ">=1.3.1",
             "phpunit/php-text-template": ">=1.1.1",
-            "phpunit/php-timer": ">=1.0.2,<1.1.0",
-            "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-            "symfony/yaml": ">=2.0,<3.0"
+            "phpunit/php-timer": "~1.0.2",
+            "phpunit/phpunit-mock-objects": "~1.2.0",
+            "symfony/yaml": "~2.0"
         },
         "require-dev": {
             "pear-pear/pear": "1.9.4"
@@ -531,7 +480,7 @@
             "ext-tokenizer": "*",
             "phpunit/php-invoker": ">=1.1.0,<1.2.0"
         },
-        "time": "2013-05-23 18:54:29",
+        "time": "2013-07-06 06:29:15",
         "bin": [
             "composer/bin/phpunit"
         ],
@@ -569,5 +518,61 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.3.1",
+        "version_normalized": "2.3.1.0",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher.git",
+            "reference": "v2.3.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.1",
+            "reference": "v2.3.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/dependency-injection": ">=2.0,<3.0"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2013-05-13 14:36:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
     }
 ]

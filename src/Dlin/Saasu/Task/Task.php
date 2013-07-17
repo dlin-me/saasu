@@ -16,7 +16,6 @@ class Task
 
     const TASK_TYPE_INSERT = 'insert';
     const TASK_TYPE_UPDATE = 'update';
-    const TASK_TYPE_BUILD = 'build'; //comboitem
 
     public $taskType; //either 'insert' or 'update'
 
@@ -71,9 +70,9 @@ class Task
 
         $this->entity = $entity;
 
-        if (self::TASK_TYPE_INSERT == $type || self::TASK_TYPE_UPDATE == $type) {
-            $this->taskType = $type;
-        }
+
+        $this->taskType = $type;
+
 
     }
 
@@ -94,7 +93,7 @@ class Task
 
         $className = lcfirst(end($className));
 
-        $nodeName = ($this->taskType) . ucfirst($className);
+        $nodeName = lcfirst(($this->taskType) . ucfirst($className));
 
         $oXMLout->startElement($nodeName);
         $oXMLout->writeRaw("\n".$this->entity->toXML());

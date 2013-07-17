@@ -18,7 +18,7 @@ class ComboItem extends InventoryItem
      * This override the parent to specify extra validation
      *
      * @param bool $forUpdate
-     * @return Validator
+     * @return $this|\Dlin\Saasu\Validator\Validator
      */
     public function validate($forUpdate = false)
     {

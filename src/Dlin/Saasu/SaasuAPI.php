@@ -50,6 +50,8 @@ class SaasuAPI
         return $this;
     }
 
+
+
     /**
      *
      * Save changes of an existing entity or add a new entity to Saasu Service API
@@ -82,6 +84,7 @@ class SaasuAPI
         }
         return $this;
     }
+
 
     /**
      * Save/create multiple entities at the same time.
