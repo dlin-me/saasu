@@ -42,7 +42,7 @@ class Contact extends EntityBase
     public $postalAddress;
 
     public $otherAddress;
-    public $isActive = true;
+    public $isActive;
     public $acceptDirectDeposit;
     public $directDepositBankName;
     public $directDepositAccountName;

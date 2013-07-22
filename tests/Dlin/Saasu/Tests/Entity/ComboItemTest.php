@@ -1,17 +1,14 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
-use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\FullComboItemCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
 use Dlin\Saasu\Entity\BuildComboItem;
 use Dlin\Saasu\Entity\ComboItem;
 use Dlin\Saasu\Entity\ComboItemItem;
-use Dlin\Saasu\Entity\InventoryItem;
-
-
+use Dlin\Saasu\Entity\InventoryAdjustment;
+use Dlin\Saasu\Entity\InventoryAdjustmentItem;
 use Dlin\Saasu\Enum\AccountType;
-use Dlin\Saasu\Enum\TaxCode;
 use Dlin\Saasu\Util\DateTime;
 
 
@@ -45,29 +42,12 @@ class ComboItemTest extends TestBase
     public function testComboItem()
     {
 
-
-        $criteria = new FullComboItemCriteria();
-        $criteria->codeBeginsWith = 'This is';
-        $results = $this->api->searchEntities($criteria);
-        //test delete
-        foreach ($results as $result) {
-            $this->api->deleteEntity($result);
-        }
+        //clean up
+        $this->removeTestComboItems();
+        $this->removeTestInventoryItems();
 
 
-        //delete test data first
-        $criteria = new FullInventoryItemCriteria();
-        $criteria->descriptionBeginsWith = 'This is';
-        $results = $this->api->searchEntities($criteria);
-        //test delete
-        foreach ($results as $result) {
-            $this->api->deleteEntity($result);
-        }
-
-
-
-
-
+        //create test bank accounts
         $assetAccount = $this->getTestBankAccount(AccountType::Asset);
         $this->api->saveEntity($assetAccount);
 
@@ -77,8 +57,8 @@ class ComboItemTest extends TestBase
         $cosAccount = $this->getTestBankAccount(AccountType::CostOfSales);
         $this->api->saveEntity($cosAccount);
 
-        //try creating comboitem without item
 
+        //try creating comboitem without item
         $code = uniqid();
         //test add
         $item =  $this->getTestComboItem($code, "This is just a test only");
@@ -87,20 +67,16 @@ class ComboItemTest extends TestBase
 
         $this->assertTrue($item->validate()->hasError('items'));
 
-
-
         $item->assetAccountUid = $assetAccount->uid;
         $item->saleIncomeAccountUid = $incomeAccount->uid;
         $item->saleCoSAccountUid =$cosAccount->uid;
 
 
-
+        //create 2 inventory items
         $i1 = $this->getTestInventoryItem(uniqid(), 'This is just a test only');
-
         $i1->assetAccountUid = $assetAccount->uid;
         $i1->saleIncomeAccountUid = $incomeAccount->uid;
         $i1->saleCoSAccountUid =$cosAccount->uid;
-
 
         $i2 = $this->getTestInventoryItem(uniqid(), 'This is just a test only');
         $i2->assetAccountUid = $assetAccount->uid;
@@ -108,9 +84,34 @@ class ComboItemTest extends TestBase
         $i2->saleCoSAccountUid =$cosAccount->uid;
 
         $this->api->saveEntities(array($i1, $i2));
-
         $this->assertGreaterThan(0, $i1->uid);
         $this->assertGreaterThan(0, $i2->uid);
+
+
+        //create some stocks for the inventory items, say 200 each
+        $iaitem1 = new InventoryAdjustmentItem();
+        $iaitem1->inventoryItemUid = $i1->uid;
+        $iaitem1->quantity = 200;
+        $iaitem1->accountUid = $i1->assetAccountUid;
+        $iaitem1->unitPriceExclTax = 12;
+        $iaitem1->totalPriceExclTax = 2400;
+
+        $iaitem2 = new InventoryAdjustmentItem();
+        $iaitem2->inventoryItemUid = $i2->uid;
+        $iaitem2->quantity = 200;
+        $iaitem2->accountUid = $i2->assetAccountUid;
+        $iaitem2->unitPriceExclTax = 22;
+        $iaitem2->totalPriceExclTax = 2400;
+
+        $ia = new InventoryAdjustment();
+        $ia->date = DateTime::getDate(time());
+        $ia->notes = "This is a test";
+        $ia->tags= "Test,me";
+        $ia->requiresFollowUp = 'false';
+        $ia->items = array($iaitem1, $iaitem2);
+
+        $this->api->saveEntity($ia);
+
 
         //ok, lets try assigning items
         $ci1 = new ComboItemItem();
@@ -167,13 +168,12 @@ class ComboItemTest extends TestBase
         $this->assertEquals(0, count($results));
 
 
-
         $criteria = new FullComboItemCriteria();
         $criteria->codeBeginsWith = 'This is';
         $results = $this->api->searchEntities($criteria);
         $this->assertEquals(0, count($results));
 
-
+        $this->removeTestInventoryItems();
         $this->removeTestBankAccounts();
 
 

@@ -5,7 +5,8 @@ use Dlin\Saasu\Validator\Validator;
 
 class InventoryTransferItem extends EntityBase
 {
-    public function __construct($uid=null){
+    public function __construct($uid = null)
+    {
         parent::__construct($uid);
         $this->_entityName = 'item';
     }
@@ -18,7 +19,8 @@ class InventoryTransferItem extends EntityBase
 
     public $totalPriceExclTax;
 
-    public function validate(){
+    public function validate()
+    {
 
         return Validator::instance()->
             lookAt($this->quantity, 'quantity')->required(true)->numeric()->

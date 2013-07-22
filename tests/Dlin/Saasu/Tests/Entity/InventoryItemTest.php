@@ -1,7 +1,6 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
-use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
 use Dlin\Saasu\Entity\InventoryItem;
 use Dlin\Saasu\Enum\AccountType;

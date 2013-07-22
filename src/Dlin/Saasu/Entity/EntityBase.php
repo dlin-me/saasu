@@ -142,7 +142,6 @@ class EntityBase
             //move uid and updateid to the begining
             $vars = array('uid' => $vars['uid'], 'lastUpdatedUid' => $vars['lastUpdatedUid']) + $vars;
 
-
             foreach ($vars as $key => $value) {
 
                 if ($value === null || strpos($key, '_') === 0) {
@@ -159,7 +158,7 @@ class EntityBase
                     $oXMLout->endElement();
 
                 } elseif ($value instanceof EntityBase) {
-                    $func($value, $key);
+                     $func($value, $key);
 
                 } elseif (($key == 'uid' || $key == 'lastUpdatedUid') && $obj->getUidPlacement() == 'attribute') {
                     if ($value != '') {
@@ -173,9 +172,27 @@ class EntityBase
 
         };
 
+
         $func($this);
 
         $string = $oXMLout->outputMemory();
+
+        //remove empty tags
+        $regexps = array (
+            '~<(\w+)\b[^\>]*>\s*</\\1>~',
+            '~<\w+\s*/>~'
+        );
+
+        do
+        {
+            $temp = $string;
+            $string = preg_replace ($regexps, '', $temp);
+            $string = str_replace("    \n", '', $string);
+        }
+        while ($string != $temp);
+
+        //remove extra spaces
+
 
         return $string;
 

@@ -10,7 +10,6 @@
 namespace Dlin\Saasu\Tests\Entity;
 
 
-use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\InventoryAdjustmentCriteria;
 use Dlin\Saasu\Entity\InventoryAdjustment;
 use Dlin\Saasu\Entity\InventoryAdjustmentItem;

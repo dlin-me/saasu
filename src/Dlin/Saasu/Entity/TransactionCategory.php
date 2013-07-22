@@ -4,6 +4,12 @@ namespace Dlin\Saasu\Entity;
 use Dlin\Saasu\Enum\AccountType;
 use Dlin\Saasu\Validator\Validator;
 
+/**
+ * This is called 'Chart of Account' in the web interface
+ *
+ * Class TransactionCategory
+ * @package Dlin\Saasu\Entity
+ */
 class TransactionCategory extends EntityBase
 {
 
@@ -18,7 +24,11 @@ class TransactionCategory extends EntityBase
     public $ledgerCode;
     public $defaultTaxCode;
 
-    public function validate($forUpdate)
+    /**
+     * @param bool $forUpdate
+     * @return Validator
+     */
+    public function validate($forUpdate=false)
     {
         return Validator::instance()->
             lookAt($this->uid, 'uid')->required($forUpdate)->int()->

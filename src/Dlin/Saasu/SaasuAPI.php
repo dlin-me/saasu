@@ -51,6 +51,10 @@ class SaasuAPI
     }
 
 
+    protected function throttle(){
+        sleep(1);
+    }
+
 
     /**
      *
@@ -68,7 +72,6 @@ class SaasuAPI
         $xml = $taskList->toXML();
 
 
-
         $url = $this->_buildURL('Tasks', array());
 
         $response = $this->client->post($url, null, $xml)->send();
@@ -82,6 +85,8 @@ class SaasuAPI
             $task->setResult($taskResult);
             break;
         }
+
+        $this->throttle();
         return $this;
     }
 
@@ -124,7 +129,7 @@ class SaasuAPI
             $counter++;
 
         }
-
+        $this->throttle();
         return $res;
     }
 
@@ -165,7 +170,7 @@ class SaasuAPI
             $entityXML = $response->xml()->{$entity->getName()}->asXML();
             $entity->fromXML($entityXML);
         }
-
+        $this->throttle();
         return $this;
     }
 
@@ -188,7 +193,7 @@ class SaasuAPI
             //check exception in response
             $this->checkException($response);
         }
-
+        $this->throttle();
         return $this;
 
     }
@@ -209,12 +214,10 @@ class SaasuAPI
         $entityName = lcfirst(array_pop($class));
 
         $url = $this->_buildURL($entityName . 'List', $query);
-
         $response = $this->client->get($url)->send();
 
 
         $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName};
-
         if(!$entityXMLItems){
             $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName. 'ListItem'};
         }
@@ -229,7 +232,7 @@ class SaasuAPI
             $entity->fromXML($item->asXML());
             $res[] = $entity;
         }
-
+        $this->throttle();
         return $res;
 
     }

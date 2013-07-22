@@ -13,7 +13,7 @@ class InventoryItem extends EntityBase
 
     public $code;
     public $description;
-    public $isActive = true;
+    public $isActive;
     public $notes;
     public $isInventoried;
     public $assetAccountUid;

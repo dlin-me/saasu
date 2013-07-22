@@ -28,7 +28,7 @@ class Validator
     /**
      * Change the value currently being validated
      * @param $value
-     * @return $this
+     * @return Validator
      */
     public function lookAt($value, $field)
     {
@@ -92,7 +92,7 @@ class Validator
      * Verify if a required value is set.
      * @param bool $yes  If true, a non-null value is required
      *
-     * @return $this|Validator
+     * @return Validator|Validator
      */
     public function required($yes=false)
     {
@@ -101,7 +101,7 @@ class Validator
 
     /**
      * Verify if the value is one of the parameter
-     * @return $this
+     * @return Validator
      */
     public function enum()
     {
@@ -112,7 +112,7 @@ class Validator
      * Verify if the value exist in the given array
      *
      * @param $array
-     * @return $this
+     * @return Validator
      */
     public function inArray($array)
     {
@@ -121,7 +121,7 @@ class Validator
 
     /**
      * Verify numeric (numeric string)
-     * @return $this
+     * @return Validator
      */
     public function numeric()
     {
@@ -130,7 +130,7 @@ class Validator
 
     /**
      * Verify a integer value (integer string)
-     * @return $this
+     * @return Validator
      */
     public function int()
     {
@@ -140,7 +140,7 @@ class Validator
     /**
      * Verify a boolean value ( boolean string, i.e. 'true' and 'false' )
      *
-     * @return $this
+     * @return Validator
      */
     public function bool()
     {
@@ -154,7 +154,7 @@ class Validator
      *
      * @param $min
      * @param int $max
-     * @return $this
+     * @return Validator
      */
     public function length($min, $max = PHP_INT_MAX)
     {
@@ -167,7 +167,7 @@ class Validator
      *
      * @param $min
      * @param int $max
-     * @return $this
+     * @return Validator
      */
     public function countArray($min, $max = PHP_INT_MAX)
     {
@@ -180,7 +180,7 @@ class Validator
     /**
      * Verify a email string value
      *
-     * @return $this
+     * @return Validator
      */
     public function email()
     {
@@ -189,7 +189,7 @@ class Validator
 
     /**
      * Verify a URL string
-     * @return $this
+     * @return Validator
      */
     public function url()
     {
@@ -201,7 +201,7 @@ class Validator
      *
      *
      * @param $regex
-     * @return $this
+     * @return Validator
      */
     public function regex($regex)
     { //e.g. "/^M(.*)/"
@@ -211,7 +211,7 @@ class Validator
     /**
      * Verify the string complies with ISO 8061 date string
      *
-     * @return $this
+     * @return Validator
      */
     public function date(){
         return $this->markErrorIf(!$this->validateDate($this->value));
@@ -220,7 +220,7 @@ class Validator
     /**
      * Verify the string complies with ISO 8061 date string with time part
      *
-     * @return $this
+     * @return Validator
      */
     public function dateTime(){
         return $this->markErrorIf(!$this->validateDateTime($this->value));
@@ -274,7 +274,7 @@ class Validator
      *
      * @param $min
      * @param $max
-     * @return $this
+     * @return Validator
      */
     public function minMax($min, $max=PHP_INT_MAX){
         return $this->markErrorIf($this->value < $min || $this->value > $max);

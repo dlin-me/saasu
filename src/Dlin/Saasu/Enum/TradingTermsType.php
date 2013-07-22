@@ -1,6 +1,6 @@
-﻿<?php
-namespace Dlin\Saasu\Enums;
+<?php
 
+namespace Dlin\Saasu\Enum;
 
 class TradingTermsType
 {

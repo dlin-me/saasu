@@ -1,5 +1,5 @@
 <?php
-namespace Dlin\Saasu\Enums;
+namespace Dlin\Saasu\Enum;
 
 class IntervalType
 {
