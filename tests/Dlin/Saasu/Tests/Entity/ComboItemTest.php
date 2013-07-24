@@ -154,18 +154,18 @@ class ComboItemTest extends TestBase
         $build->quantity = 5;
         $this->api->saveEntity($build);
 
+        $this->assertGreaterThan(0, $build->uid);
+
+        //need to delete the transfer, combo item , adjustment and items in order
+
+        $this->removeInventoryTransfer();
+        $this->api->deleteEntity($item); //comboitem
+        $this->removeInventoryAdjustment();
 
 
-        $this->api->deleteEntity($item);
-        $this->api->deleteEntity($i1);
-        $this->api->deleteEntity($i2);
 
 
         //check if they are really deleted;
-        $criteria = new FullInventoryItemCriteria();
-        $criteria->descriptionBeginsWith = 'This is';
-        $results = $this->api->searchEntities($criteria);
-        $this->assertEquals(0, count($results));
 
 
         $criteria = new FullComboItemCriteria();

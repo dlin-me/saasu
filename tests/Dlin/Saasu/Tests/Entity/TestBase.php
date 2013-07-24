@@ -4,6 +4,8 @@ namespace Dlin\Saasu\Tests\Entity;
 use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\FullComboItemCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
+use Dlin\Saasu\Criteria\InventoryAdjustmentCriteria;
+use Dlin\Saasu\Criteria\InventoryTransferCriteria;
 use Dlin\Saasu\Entity\BankAccount;
 use Dlin\Saasu\Entity\ComboItem;
 use Dlin\Saasu\Entity\InventoryItem;
@@ -153,6 +155,22 @@ class TestBase extends \PHPUnit_Framework_TestCase
 
         return $e;
 
+    }
+
+
+    protected function removeInventoryAdjustment(){
+        $list = $this->api->searchEntities(new InventoryAdjustmentCriteria());
+        foreach($list as $item){
+            $this->api->deleteEntity($item);
+        }
+    }
+
+
+    protected function removeInventoryTransfer(){
+        $list = $this->api->searchEntities(new InventoryTransferCriteria());
+        foreach($list as $item){
+            $this->api->deleteEntity($item);
+        }
     }
 
 

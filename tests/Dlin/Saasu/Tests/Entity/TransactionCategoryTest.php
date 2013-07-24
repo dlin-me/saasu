@@ -85,7 +85,7 @@ class TransactionCategoryTest extends TestBase
         }
 
         $this->assertTrue($hasFounded);
-        
+
         $this->api->deleteEntity($account);
 
         $results = $this->api->searchEntities($criteria);
