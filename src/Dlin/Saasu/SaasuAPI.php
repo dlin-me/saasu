@@ -11,6 +11,7 @@ namespace Dlin\Saasu;
 
 
 use Dlin\Saasu\Criteria\CriteriaBase;
+use Dlin\Saasu\Entity\EmailMessage;
 use Dlin\Saasu\Entity\EntityBase;
 use Dlin\Saasu\Task\Task;
 use Dlin\Saasu\Task\TaskList;
@@ -63,14 +64,13 @@ class SaasuAPI
      * @param EntityBase $entity
      * @return $this
      */
-    public function saveEntity(\Dlin\Saasu\Entity\EntityBase $entity)
+    public function saveEntity(\Dlin\Saasu\Entity\EntityBase $entity, $option=null)
     {
         $taskList = new TaskList();
-        $type = $entity->uid ? Task::TASK_TYPE_UPDATE : Task::TASK_TYPE_INSERT;
-        $task = new Task($type, $entity);
+        $type = $entity->getSaveOperationName();
+        $task = new Task($entity, $option);
         $taskList->add($task);
         $xml = $taskList->toXML();
-
 
         $url = $this->_buildURL('Tasks', array());
 
@@ -107,7 +107,7 @@ class SaasuAPI
          */
         foreach ($entities as $entity) {
             $type = $entity->getSaveOperationName();
-            $task = new Task($type, $entity);
+            $task = new Task($entity);
             $taskList->add($task);
         }
 
@@ -155,12 +155,15 @@ class SaasuAPI
      * $entity must be an existing Entity with a UID set
      *
      * @param \Dlin\Saasu\Entity\EntityBase $entity
+     * @param array $query
      */
-    public function loadEntity(\Dlin\Saasu\Entity\EntityBase $entity)
+    public function loadEntity(\Dlin\Saasu\Entity\EntityBase $entity, array $query)
     {
         $uid = $entity->uid;
+        $query = is_array($query)?$query:array();
         if (intval($uid) > 0) { //load data from remote service
-            $url = $this->_buildURL($entity->getName(), array('uid' => $uid));
+            $query['uid'] = $uid;
+            $url = $this->_buildURL($entity->getName(), $query);
 
             $response = $this->client->get($url)->send();
 
@@ -215,7 +218,8 @@ class SaasuAPI
 
         $url = $this->_buildURL($entityName . 'List', $query);
         $response = $this->client->get($url)->send();
-
+        //check exception in response
+        $this->checkException($response);
 
         $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName};
         if(!$entityXMLItems){

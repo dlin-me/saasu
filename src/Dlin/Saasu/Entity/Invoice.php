@@ -48,6 +48,7 @@ class Invoice extends EntityBase
 
 
 
+
     public function validate($forUpdate = false)
     {
 

@@ -10,6 +10,8 @@
 namespace Dlin\Saasu\Task;
 
 use Dlin\Saasu\Entity\EntityBase;
+use Dlin\Saasu\Entity\Invoice;
+use Dlin\Saasu\Entity\InvoiceInstruction;
 
 class Task
 {
@@ -26,6 +28,11 @@ class Task
      * @var \Dlin\Saasu\Entity\EntityBase
      */
     public $entity;
+
+    /**
+     * @var \Dlin\Saasu\Entity\InvoiceInstruction Only applicable for invoice entity
+     */
+    protected $option;
 
 
     public $list; //the list this task is in, every task must be in a list before execution
@@ -62,17 +69,15 @@ class Task
     /**
      *
      * Constructor
-     * @param $type
+     * @param $entity EntityBase
+     * @param $option \Dlin\Saasu\Entity\InvoiceInstruction Only applicable when Entity is an invoice
      */
-    public function __construct($type, EntityBase &$entity)
+    public function __construct(EntityBase &$entity, $option=null)
     {
 
-
         $this->entity = $entity;
-
-
-        $this->taskType = $type;
-
+        $this->taskType = $entity->getSaveOperationName();
+        $this->option = $option;
 
     }
 
@@ -96,6 +101,18 @@ class Task
         $nodeName = lcfirst(($this->taskType) . ucfirst($className));
 
         $oXMLout->startElement($nodeName);
+
+        if($this->entity instanceof Invoice && $this->option && $this->option instanceof InvoiceInstruction){
+            $oXMLout->writeAttribute("emailToContact", $this->option->emailToContact);
+            if($this->option->templateUid > 0){
+                $oXMLout->writeElement('templateUid', $this->option->templateUid);
+            }
+            if($this->option->emailMessage){
+                $oXMLout->writeRaw( "\n".$this->option->emailMessage->toXML());
+            }
+        }
+
+
         $oXMLout->writeRaw("\n".$this->entity->toXML());
 
         $oXMLout->endElement();

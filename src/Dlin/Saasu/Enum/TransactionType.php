@@ -1,7 +1,7 @@
 <?php
-namespace DavidForest\SaasuBundle\Lib\Enum;
+namespace Dlin\Saasu\Enum;
 
-use Dlin\Saasu\Enum\BaseEnum;
+
 
 class TransactionType extends BaseEnum
 {
