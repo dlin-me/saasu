@@ -57,7 +57,7 @@ class BankAccountTest extends TestBase
         $bankAccount = new BankAccount();
         $bankAccount->type = 'Asset';
         $bankAccount->name = "TestAccount_".uniqid();
-        $bankAccount->displayName = "TestAccount";
+        $bankAccount->displayName = "TestAccount".uniqid();
         $bankAccount->bsb = 123456;
         $bankAccount->accountNumber = 123123123;
 
@@ -71,7 +71,7 @@ class BankAccountTest extends TestBase
 
 
         //test update
-        $bankAccount->displayName = "My Display BankAccount";
+        $bankAccount->displayName = "My Display BankAccount".uniqid();
         $this->api->saveEntity($bankAccount);
 
         //test load/get

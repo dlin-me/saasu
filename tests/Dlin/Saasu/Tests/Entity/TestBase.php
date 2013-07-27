@@ -6,10 +6,25 @@ use Dlin\Saasu\Criteria\FullComboItemCriteria;
 use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
 use Dlin\Saasu\Criteria\InventoryAdjustmentCriteria;
 use Dlin\Saasu\Criteria\InventoryTransferCriteria;
+use Dlin\Saasu\Criteria\InvoiceCriteria;
+use Dlin\Saasu\Criteria\InvoicePaymentCriteria;
+use Dlin\Saasu\Criteria\TransactionCategoryCriteria;
 use Dlin\Saasu\Entity\BankAccount;
 use Dlin\Saasu\Entity\ComboItem;
 use Dlin\Saasu\Entity\InventoryItem;
+use Dlin\Saasu\Entity\Invoice;
+use Dlin\Saasu\Entity\ServiceInvoiceItem;
+use Dlin\Saasu\Entity\TradingTerms;
+use Dlin\Saasu\Entity\TransactionCategory;
+use Dlin\Saasu\Enum\AccountType;
+use Dlin\Saasu\Enum\IntervalType;
+use Dlin\Saasu\Enum\InvoiceLayout;
+use Dlin\Saasu\Enum\InvoiceStatus;
+use Dlin\Saasu\Enum\InvoiceTypeAU;
+use Dlin\Saasu\Enum\PaidStatus;
 use Dlin\Saasu\Enum\TaxCode;
+use Dlin\Saasu\Enum\TradingTermsType;
+use Dlin\Saasu\Enum\TransactionType;
 use Dlin\Saasu\SaasuAPI;
 use Dlin\Saasu\Util\DateTime;
 
@@ -32,7 +47,7 @@ class TestBase extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->api = new SaasuAPI('0933A2A7616C4DED82EF3E02A3B18A9E', '41509');
+        $this->api = new SaasuAPI('D4A92597762C4FDCAF66FF03C988B7B0', '41509');
     }
 
 
@@ -174,5 +189,108 @@ class TestBase extends \PHPUnit_Framework_TestCase
     }
 
 
+    protected function removeTestInvoices(){
+        $criteria = new InvoiceCriteria();
+        $criteria->transactionType = TransactionType::Sale;
+        $criteria->paidStatus = PaidStatus::All;
+        $res = $this->api->searchEntities($criteria);
+
+
+        //test delete
+        foreach($res as $n){
+            $this->api->deleteEntity($n);
+        }
+
+    }
+
+
+    protected function getTestInvoice(){
+        //prepare a bank account
+        $bankAccount = $this->getTestBankAccount(AccountType::Income);
+        $this->api->saveEntity($bankAccount);
+        $this->assertGreaterThan(0, $bankAccount->uid);
+
+        $account = new TransactionCategory();
+        $account->type = AccountType::CostOfSales;
+        $account->name = "TestAccount_".uniqid();
+        $account->isActive = "true";
+        $this->api->saveEntity($account);
+
+
+        //prepare two items
+        $item1 = new ServiceInvoiceItem();
+        $item1->description = "test service 1";
+        $item1->accountUid = $account->uid;
+        $item1->taxCode = TaxCode::SaleInclGst;
+        $item1->totalAmountInclTax = 11.12;
+
+        $item2 = new ServiceInvoiceItem();
+        $item2->description = "test service 2";
+        $item2->accountUid = $account->uid;
+        $item2->taxCode = TaxCode::SaleInclGst;
+        $item2->totalAmountInclTax = 88.88;
+
+
+        //test create
+        $i= new Invoice();
+        $i->invoiceType = InvoiceTypeAU::TaxInvoice;
+        $i->transactionType = TransactionType::Sale;
+        $i->date = DateTime::getDate(time());
+        $i->summary = "This is a test summary";
+        $i->notes = "Test";
+        $i->tags="test";
+        $i->requiresFollowUp = 'false';
+        $i->dueOrExpiryDate = DateTime::getDate(time()+86400*14);
+        $i->layout = InvoiceLayout::Service;
+        $i->status = InvoiceStatus::Invoice;
+        //$i->invoiceNumber = "<Auto Number>";
+        $tradingTerms = new TradingTerms();
+        $tradingTerms->type = TradingTermsType::DueIn;
+        $tradingTerms->intervalType = IntervalType::Day;
+        $tradingTerms->interval = 14;
+        $i->tradingTerms = $tradingTerms;
+
+        $i->isSent = 'false';
+        $i->invoiceItems = array($item1, $item2);
+
+        $this->api->saveEntity($i);
+
+        return $i;
+    }
+
+    protected function removeTestTransactionCategories(){
+        //test search
+        $criteria = new TransactionCategoryCriteria();
+        $criteria->isInbuilt = 'false';
+        $res = $this->api->searchEntities($criteria);
+
+
+        //test delete
+        foreach($res as $n){
+            $this->api->deleteEntity($n);
+        }
+    }
+
+
+    protected function removeTestInvoicePayments(){
+        $criteria = new InvoicePaymentCriteria();
+        $criteria->transactionType = TransactionType::SalePayment;
+        $res = $this->api->searchEntities($criteria);
+
+
+        //test delete
+        foreach($res as $n){
+            $this->api->deleteEntity($n);
+        }
+    }
+
+    protected function getTestTransactionCategory(){
+        $account = new TransactionCategory();
+        $account->type = AccountType::CostOfSales;
+        $account->name = "TestAccount_".uniqid();
+        $account->isActive = "true";
+
+        return $account;
+    }
 
 }

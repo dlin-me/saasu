@@ -157,7 +157,7 @@ class SaasuAPI
      * @param \Dlin\Saasu\Entity\EntityBase $entity
      * @param array $query
      */
-    public function loadEntity(\Dlin\Saasu\Entity\EntityBase $entity, array $query)
+    public function loadEntity(\Dlin\Saasu\Entity\EntityBase $entity, array $query=null)
     {
         $uid = $entity->uid;
         $query = is_array($query)?$query:array();
@@ -220,6 +220,8 @@ class SaasuAPI
         $response = $this->client->get($url)->send();
         //check exception in response
         $this->checkException($response);
+
+
 
         $entityXMLItems = $response->xml()->{$entityName . 'List'}->{$entityName};
         if(!$entityXMLItems){

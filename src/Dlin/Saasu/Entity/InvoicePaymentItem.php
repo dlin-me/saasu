@@ -14,7 +14,9 @@ class InvoicePaymentItem extends EntityBase
     public $invoiceUid;
     public $amount;
 
-
+    /**
+     * @return Validator
+     */
     public function validate(){
 
         return Validator::instance()->

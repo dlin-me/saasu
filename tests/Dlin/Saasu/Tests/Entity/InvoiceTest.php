@@ -12,6 +12,7 @@ namespace Dlin\Saasu\Tests\Entity;
 
 use Dlin\Saasu\Criteria\InvoiceCriteria;
 use Dlin\Saasu\Entity\EmailMessage;
+use Dlin\Saasu\Entity\EmailPdfInvoice;
 use Dlin\Saasu\Entity\Invoice;
 use Dlin\Saasu\Entity\InvoiceInstruction;
 use Dlin\Saasu\Entity\ItemInvoiceItem;
@@ -108,9 +109,16 @@ class InvoiceTest extends TestBase{
         $payment->reference = 'Cash';
         $payment->summary = "Quick Test payment";
 
+        //prepare a email;
+        $email = new EmailMessage();
+        $email->to = "davidlinmail@hotmail.com";
+        $email->from = "david.lin.au@gmail.com";
+        $email->subject = "test saasue";
+        $email->body = "test body";
 
         //test create
         $i= new Invoice();
+        $i->invoiceType = InvoiceTypeAU::TaxInvoice;
         $i->transactionType = TransactionType::Sale;
         $i->date = DateTime::getDate(time());
         $i->summary = "This is a test summary";
@@ -134,16 +142,23 @@ class InvoiceTest extends TestBase{
 
         $this->api->saveEntity($i);
 
+
+        //test emailPdfInvoice
+
+        $emailPdfInvoice = new EmailPdfInvoice();
+        $emailPdfInvoice->emailMessage = $email;
+        $emailPdfInvoice->invoiceUid = $i->uid;
+
+        $this->api->saveEntity($emailPdfInvoice);
+
+
+
         //test update with instruction to send email
         $i->summary = "Test update me";
         $i->quickPayment = $payment;
 
         $instruction = new InvoiceInstruction();
-        $email = new EmailMessage();
-        $email->to = "davidlinmail@hotmail.com";
-        $email->from = "david.lin.au@gmail.com";
-        $email->subject = "test saasue";
-        $email->body = "test body";
+
         $instruction->emailMessage = $email;
         $instruction->emailToContact = 'true';
 

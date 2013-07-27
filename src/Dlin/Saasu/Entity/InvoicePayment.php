@@ -5,10 +5,13 @@ use Dlin\Saasu\Validator\Validator;
 
 class InvoicePayment extends EntityBase
 {
-
+    /**
+     * Constructor
+     * @param null $uid
+     */
     public function __construct($uid=null){
         parent::__construct($uid);
-        $this->items = array();
+        $this->invoicePaymentItems = array();
     }
 
     public $transactionType;
@@ -24,8 +27,12 @@ class InvoicePayment extends EntityBase
     public $requiresFollowUp;
     public $paymentAccountUid;
     public $dateCleared;
-    public $items;
+    public $invoicePaymentItems;
 
+    /**
+     * @param boolean $forUpdate
+     * @return Validator
+     */
     public function validate($forUpdate){
 
         return Validator::instance()->
