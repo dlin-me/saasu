@@ -2,7 +2,7 @@
 
 namespace Dlin\Saasu\Enum;
 
-class TradingTermsType
+class TradingTermsType extends BaseEnum
 {
 
     const Unspecified = 0;

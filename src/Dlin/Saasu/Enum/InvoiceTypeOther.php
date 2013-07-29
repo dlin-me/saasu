@@ -5,7 +5,7 @@ namespace Dlin\Saasu\Enum;
  * Notes: This is zone sensitive. Too see a list of Invoice Types that you could use for your zone,
  * sign in to your file, then go to Sales > Add or Purchases > Add.
  */
-class InvoiceTypeOther
+class InvoiceTypeOther extends BaseEnum
 {
     const PreQuoteOpportunity = "Pre-Quote Opportunity";
     const Quote = "Quote";

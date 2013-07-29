@@ -1,8 +1,8 @@
 <?php
 namespace Dlin\Saasu\Entity;
 
-use Dlin\Saasu\Validator\Validator;
 
+use Dlin\Saasu\Validator\Validator;
 
 class BankAccount extends TransactionCategory
 {

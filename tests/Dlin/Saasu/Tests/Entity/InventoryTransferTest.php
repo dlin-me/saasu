@@ -10,7 +10,6 @@
 namespace Dlin\Saasu\Tests\Entity;
 
 
-use Dlin\Saasu\Criteria\InventoryAdjustmentCriteria;
 use Dlin\Saasu\Criteria\InventoryTransferCriteria;
 use Dlin\Saasu\Entity\InventoryAdjustment;
 use Dlin\Saasu\Entity\InventoryAdjustmentItem;

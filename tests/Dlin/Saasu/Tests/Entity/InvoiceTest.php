@@ -15,7 +15,6 @@ use Dlin\Saasu\Entity\EmailMessage;
 use Dlin\Saasu\Entity\EmailPdfInvoice;
 use Dlin\Saasu\Entity\Invoice;
 use Dlin\Saasu\Entity\InvoiceInstruction;
-use Dlin\Saasu\Entity\ItemInvoiceItem;
 use Dlin\Saasu\Entity\QuickPayment;
 use Dlin\Saasu\Entity\ServiceInvoiceItem;
 use Dlin\Saasu\Entity\TradingTerms;

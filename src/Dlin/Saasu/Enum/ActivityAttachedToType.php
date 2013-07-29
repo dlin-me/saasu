@@ -15,7 +15,7 @@ namespace Dlin\Saasu\Enum;
  * @package Dlin\Saasu\Enum
  * @see \Dlin\Saasu\Entity\Activity::attachedToType
  */
-class ActivityAttachedToType
+class ActivityAttachedToType extends BaseEnum
 {
     const Contact = 'Contact';
     const Sale = 'Sale';

@@ -2,7 +2,6 @@
 
 namespace Dlin\Saasu\Tests\Entity;
 use Dlin\Saasu\Criteria\FullComboItemCriteria;
-use Dlin\Saasu\Criteria\FullInventoryItemCriteria;
 use Dlin\Saasu\Entity\BuildComboItem;
 use Dlin\Saasu\Entity\ComboItem;
 use Dlin\Saasu\Entity\ComboItemItem;

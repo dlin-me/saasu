@@ -11,11 +11,11 @@ namespace Dlin\Saasu;
 
 
 use Dlin\Saasu\Criteria\CriteriaBase;
-use Dlin\Saasu\Entity\EmailMessage;
 use Dlin\Saasu\Entity\EntityBase;
 use Dlin\Saasu\Task\Task;
 use Dlin\Saasu\Task\TaskList;
 use Dlin\Saasu\Task\TaskResult;
+use Dlin\Saasu\Util\Throttler;
 use Guzzle\Http\Message\Response;
 
 class SaasuAPI
@@ -29,13 +29,15 @@ class SaasuAPI
 
     protected $wsFileUid;
 
+    protected $throttler;
+
     public function __construct($ws_access_key, $file_uid, $ws_url = 'https://secure.saasu.com/webservices/rest/r1/')
     {
         $this->wsUrl = $ws_url;
         $this->wsKey = $ws_access_key;
         $this->wsFileUid = $file_uid;
         $this->client = new \Guzzle\Service\Client($this->wsUrl);
-
+        $this->throttler = new Throttler(5, 1);
     }
 
     public function checkException(Response $response)
@@ -52,9 +54,7 @@ class SaasuAPI
     }
 
 
-    protected function throttle(){
-        sleep(1);
-    }
+
 
 
     /**
@@ -66,8 +66,9 @@ class SaasuAPI
      */
     public function saveEntity(\Dlin\Saasu\Entity\EntityBase $entity, $option=null)
     {
+        $this->throttler->throttle();
+
         $taskList = new TaskList();
-        $type = $entity->getSaveOperationName();
         $task = new Task($entity, $option);
         $taskList->add($task);
         $xml = $taskList->toXML();
@@ -86,7 +87,7 @@ class SaasuAPI
             break;
         }
 
-        $this->throttle();
+
         return $this;
     }
 
@@ -101,12 +102,12 @@ class SaasuAPI
      */
     public function saveEntities(array $entities)
     {
+        $this->throttler->throttle();
         $taskList = new TaskList();
         /**
          * @var \Dlin\Saasu\Entity\EntityBase $entity
          */
         foreach ($entities as $entity) {
-            $type = $entity->getSaveOperationName();
             $task = new Task($entity);
             $taskList->add($task);
         }
@@ -129,7 +130,7 @@ class SaasuAPI
             $counter++;
 
         }
-        $this->throttle();
+
         return $res;
     }
 
@@ -159,6 +160,7 @@ class SaasuAPI
      */
     public function loadEntity(\Dlin\Saasu\Entity\EntityBase $entity, array $query=null)
     {
+        $this->throttler->throttle();
         $uid = $entity->uid;
         $query = is_array($query)?$query:array();
         if (intval($uid) > 0) { //load data from remote service
@@ -173,7 +175,7 @@ class SaasuAPI
             $entityXML = $response->xml()->{$entity->getName()}->asXML();
             $entity->fromXML($entityXML);
         }
-        $this->throttle();
+
         return $this;
     }
 
@@ -186,7 +188,7 @@ class SaasuAPI
      */
     public function deleteEntity(\Dlin\Saasu\Entity\EntityBase $entity)
     {
-
+        $this->throttler->throttle();
         $uid = $entity->uid;
         if (intval($uid) > 0) { //load data from remote service
             $url = $this->_buildURL($entity->getName(), array('uid' => $uid));
@@ -196,7 +198,6 @@ class SaasuAPI
             //check exception in response
             $this->checkException($response);
         }
-        $this->throttle();
         return $this;
 
     }
@@ -210,7 +211,7 @@ class SaasuAPI
      */
     public function searchEntities(CriteriaBase $criteria)
     {
-
+        $this->throttler->throttle();
         $query = $criteria ? get_object_vars($criteria) : array();
         $fullClass = $criteria->getEntityClass();
         $class = explode('\\', $fullClass);
@@ -238,7 +239,6 @@ class SaasuAPI
             $entity->fromXML($item->asXML());
             $res[] = $entity;
         }
-        $this->throttle();
         return $res;
 
     }

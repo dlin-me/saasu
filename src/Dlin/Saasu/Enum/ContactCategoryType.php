@@ -1,6 +1,8 @@
 <?php
 namespace Dlin\Saasu\Entity;
-class ContactCategoryType
+use Dlin\Saasu\Enum\BaseEnum;
+
+class ContactCategoryType extends BaseEnum
 {
 
     const Status = "Status";

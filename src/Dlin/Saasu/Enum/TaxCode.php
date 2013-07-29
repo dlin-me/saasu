@@ -5,7 +5,7 @@ namespace Dlin\Saasu\Enum;
  * NOTE: Tax codes must exist in your file.
  * @see https://secure.saasu.com/a/net/taxcodelist.aspx
  */
-class TaxCode
+class TaxCode extends BaseEnum
 {
     const ExpInclGst = "G11";
     const ExpGstFree = "G11,G14";

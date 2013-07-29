@@ -1,7 +1,7 @@
 <?php
 namespace Dlin\Saasu\Enum;
 
-class IntervalType
+class IntervalType extends BaseEnum
 {
 
     const Unspecified = 0;

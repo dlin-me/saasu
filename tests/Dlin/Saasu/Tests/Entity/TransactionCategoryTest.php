@@ -1,9 +1,7 @@
 <?php
 
 namespace Dlin\Saasu\Tests\Entity;
-use Dlin\Saasu\Criteria\BankAccountCriteria;
 use Dlin\Saasu\Criteria\TransactionCategoryCriteria;
-use Dlin\Saasu\Entity\BankAccount;
 use Dlin\Saasu\Entity\TransactionCategory;
 use Dlin\Saasu\Util\DateTime;
 
