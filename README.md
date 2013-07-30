@@ -155,7 +155,7 @@ $toBeDeleted = new BankAccount(23456);
 $api->deleteEntity($toBeDeleted);
 
 ```
-Note that theh first line of code above passes the uid into the entity constructor. This is a handy optional way to set a *uid* to a newly created object. All main entity classes accept a uid as an optional parameter to their constructors.
+Note that the first line of code above passes the uid into the entity constructor. This is a handy optional way to set a *uid* to a newly created object. All main entity classes accept a uid as an optional parameter to their constructors.
 
 
 
