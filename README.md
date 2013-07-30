@@ -7,7 +7,20 @@ This is a PHP Client library for [**Saasu**](http://www.saasu.com), the online a
 
 This library is designed to make it easy to work with the  Saasu API for general purpose. 
 
-## 2. Usage
+## 2. Installation
+
+With composer, add to your composer.json :
+
+```
+{
+    require: {
+        "dlin/saasu": "dev-master"
+    }
+}
+```
+
+
+## 3. Usage
 This library, hereafter refered to as **Saasu PHP Client**, comes with a very simple interface with methods for interacting with Saasu API to load, insert, update, search, and delete entities.
 
 #### Instantiate the main api instance 
@@ -147,7 +160,7 @@ Note that theh first line of code above passes the uid into the entity construct
 
 
 
-## 3. Entities
+## 4. Entities
 
 In **Saasu PHP Client**, the entity objects are what we called Data Transfer Objects. Some entities, like *EmailMessage*, are assisting entities and do not have *uid* property value assigned. Entities that can have assigned *uid* are **main** entities. Only **main** entities have accompanying criteria classes with the exception of *DeletedEntity* and *Tag* (covered later). 
 
@@ -219,7 +232,7 @@ InvoiceInstruction | To perform extra task upon inserting/updating an invoice (i
 Here is the example if you want to send an email to the contact upon the creation of a new invoice:
 
 ```
-//prepare a email;
+//prepare an email;
 $email = new EmailMessage();
 $email->to = "test@hotmail.com";
 $email->from = "test.sender@gmail.com";
@@ -240,7 +253,9 @@ $this->api->saveEntity($invoice, $instruction);
 
 ```
 
-## 4. Helper Classes
+When working with Invoice, the *saveEntity* method support another parameter *$instruction*.
+
+## 5. Helper Classes
 To make easy working with the entity classes, there are some useful helper classes available.
 
 #### DateTime 
@@ -296,40 +311,123 @@ Returns an array of constant names of the class
 ##### values()
 Return an associate array with constant names as keys and their values as values
 
+## 6. Exceptions
+
+When *Saasu API* rejects the request, an exception is thrown with the relevant message and response code. There is a lot to take care when dealing with some complicated entities such as Invoice where inventory/stock level, account balance and payments must keep consistent.
 
 
-## 4. Unit Tests
+Rules for invoices:
 
-The test cases included in this library can also be served as a collection of examples covering every entity and most usage cases.
+* Duplicate invoice number is not allowed.
+* Invoice overpayment is not allowed (e.g. Applying $200 payment to $100 invoice is not * permitted).
+* Tax code cannot be applied to Tax Accounts (Asset: Tax Paid on Purchases and Liability: Tax Collected from Sales).
+* Tax code cannot be applied to Bank Accounts.
+* If due date is specified along with trading terms, then trading terms will take precedence 
+over due date to set the actual due date for the invoice being saved.
+* Inserting, updating, and deleting item invoices that have the potential to cause invalid stock level are not permitted. 
+
+Sometimes it is just too easy to create, update, or delete an invoice that results in breaking this rules. In those cases, exception is to help:
+
+```
+try{
+	…
+	$api->deleteEntity($invoice);
+	…
+}catch(Exception $e){
+	$err = $e->getMessage();
+	//report the exception
+	echo $err;
+}
+
+```
+
+
+
+
+## 7. Unit Tests
+
+The test cases included in this library has 200+ assertion, they can also be served as a collection of examples covering every entity and most usage cases.
 
 Please take time to inspect the test code if necessary.
 
 
 
-## 5. Exceptions
+
+## 8. Validation
+
+All entities in this **Saasu PHP Client** library also come with a *validate()* method.
+
+The *validate* method returns a Validator instance that provides the *hasError* and *getErrors* method.
+
+The **hasError(fieldName)** method return true if the given field is invalid, false otherwise
+
+The **getErrors()** method return an associated array of errors with the keys being field names and the type of error as value;
+
+Let's take a sniplet of test case as an example:
+
+```
+$a = new Activity();
+
+//If not field name is given, any invalid field will result in **hasError** returning true.
+$this->assertTrue($a->validate()->hasError()); 
+
+//If a field name is given, true is returned if the given field has invalid value
+$this->assertTrue($a->validate()->hasError('type'));
+
+//getErrors return all errors if there's any
+$errors = $a->validate()->getErrors();
+
+//The error message is just the type of error
+echo $error['type']; //prints "required";
+
+//'required' is simple one of many error types, you can look at the Validator class for all.
+$a->type="Some invalid value";
+$errors = $a->validate()->getErrors();
+echo $error['type']; //prints "enum";
+
+//Using the classe constants help avoid invalid values
+$a->type= ActivityType::Sale;
+$this->assertFalse($a->validate()->hasError('type'));
+
+```
+
+Some fields are required only when the entity is being update. For example, the *uid* field is required when you want to update an entity. For this purpose, the **validate** method for main entities accept an optional parameter to indicate the validation is for an 'update' operation.
+
+```
+$invoice = new Invoice();
+
+echo $invoice->validate(true)->hasError('uid'); //true for update
+echo $invoice->validate()->hasError('uid'); //false for create
+```
 
 
-
-## 6. Validation
-
-
-
-## 5. Limitation & Known Issues
+## 9. Limitation & Known Issues
 
 #### Usage Limit
 The Saasu empose some Fair play limits:
 >Maximum of 5 requests per second.
-Maximum of 2,000 requests per day.
-All synchronization activities must rely on Last Modified where this is supported in the API.
-If you are making hundreds of requests at once, insert a minimum of 2 seconds delay for every 50 requests.
-When sending a multiple task request limit the number of tasks to a maximum of 50.
+
+>Maximum of 2,000 requests per day.
+
+>All synchronization activities must rely on Last Modified where this is supported in the API.
+
+>If you are making hundreds of requests at once, insert a minimum of 2 seconds delay for every 
+50 requests.
+
+>When sending a multiple task request limit the number of tasks to a maximum of 50.
 
 
-This PHP Client library comes with a internal throttle to make sure no more than 5 requests can be made within any second. However, it is the user's responsibility to take care of other usage limits.
+This PHP Client library comes with a internal throttle to make sure **no more than 5 requests ** can be made within any second. However, it is the your own responsibility to take care of other usage limits.
+
+#### Hidden rules
+
+There coulbe be many undocumentated rules due to the complexity of accounting and the software itself. For example, when searching contacts, inactive contacts will never return, i.e. not searchable. 
 
 
 
 
-## 6. License
+## 10. License
 
+
+This library is free. Please refer to the license file in the root directory for detail license info.
 

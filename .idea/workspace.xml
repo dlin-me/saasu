@@ -122,6 +122,27 @@
     <file path="/IntervalType.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375111844340" ignored="false" />
     <file path="/InvoiceLayout.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375111849386" ignored="false" />
     <file path="/JournalItemType.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375111889004" ignored="false" />
+    <file path="/composer.json" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375135788433" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Comparator/Double.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531546" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Comparator/MockObject.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Comparator/Exception.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Constraint/SameSize.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Constraint/Attribute.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Comparator/Object.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/Tests/Framework/TestCaseTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Util/Log/TAP.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/PHP/CodeCoverage/Report/Node/File.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/Tests/_files/CoveredClass.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Constraint/IsIdentical.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/Tests/Framework/SuiteTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531548" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Util/Class.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Extensions/RepeatedTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/Tests/_files/NamespaceCoveredClass.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Runner/BaseTestRunner.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/TextUI/ResultPrinter.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/Tests/PHP/CodeCoverage/Report/FactoryTest.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/Tests/_files/source_without_namespace.php" changelist="85fd0be6-c3bf-4447-9320-d94e5da1353f" time="1375187531549" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +152,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Saasu$EntityBaseTest.coverage" NAME="EntityBaseTest Coverage Results" MODIFIED="1369664335216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Saasu$Tests.coverage" NAME="Tests Coverage Results" MODIFIED="1375187863826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -144,64 +166,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InvoiceTypeSG.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceTypeSG.php">
+      <file leaf-file-name="Activity.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/Activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="-4.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JournalItemType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/JournalItemType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="38" selection-start="71" selection-end="71" vertical-scroll-proportion="-1.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaidStatus.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/PaidStatus.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Salutation.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/Salutation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchFieldName.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/SearchFieldName.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaxCode.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/TaxCode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="172" selection-end="172" vertical-scroll-proportion="-4.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TradingTermsType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/TradingTermsType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="39" selection-start="74" selection-end="74" vertical-scroll-proportion="-2.5">
+            <state line="47" column="20" selection-start="1203" selection-end="1203" vertical-scroll-proportion="-1.625">
               <folding />
             </state>
           </provider>
@@ -225,10 +193,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="335" column="0" selection-start="11319" selection-end="11319" vertical-scroll-proportion="0.6727273">
+            <state line="433" column="0" selection-start="14833" selection-end="14833" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="8" selection-start="343" selection-end="774" vertical-scroll-proportion="-3.75">
+              <folding>
+                <element signature="e#42#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/bootstrap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidatorTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="29" selection-start="143" selection-end="143" vertical-scroll-proportion="-6.25">
+              <folding>
+                <element signature="e#6#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validator.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Validator/Validator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="29" selection-start="1290" selection-end="1299" vertical-scroll-proportion="25.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="21" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LICENSE" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="-6.111111">
               <folding />
             </state>
           </provider>
@@ -244,7 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Util/DateTimeTest.php" />
         <option value="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Util/ThrottlerTest.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Enum/ActivityAttachedToType.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Enum/ContactCategoryType.php" />
@@ -259,6 +287,7 @@
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Enum/JournalItemType.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Enum/TaxCode.php" />
         <option value="$PROJECT_DIR$/src/Dlin/Saasu/Enum/TradingTermsType.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -365,7 +394,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -374,44 +403,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Saasu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Saasu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Saasu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dlin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Saasu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,6 +425,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Saasu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Validator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -571,7 +566,7 @@
       <recent name="$PROJECT_DIR$/src/Dlin/Saasu/Enum" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.DateTimeTest">
+  <component name="RunManager" selected="PHPUnit.Tests">
     <configuration default="false" name="ThrottlerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Dlin\Saasu\Tests\Util\ThrottlerTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Util/ThrottlerTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
@@ -580,12 +575,6 @@
     </configuration>
     <configuration default="false" name="ActivityTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Dlin\Saasu\Tests\Entity\ActivityTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php" scope="Class" />
-      <RunnerSettings RunnerId="PhpRunner" />
-      <ConfigurationWrapper RunnerId="PhpRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ContactTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Dlin\Saasu\Tests\Entity\ContactTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ContactTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
@@ -599,6 +588,14 @@
       <TestRunner class="Dlin\Saasu\Tests\Util\DateTimeTest" file="$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Util/DateTimeTest.php" scope="Class" />
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/tests/Dlin/Saasu/Tests" />
+      <RunnerSettings RunnerId="PhpRunner" />
+      <RunnerSettings RunnerId="PhpUnitCoverageRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpUnitCoverageRunner" />
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -620,17 +617,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="PHPUnit.ThrottlerTest" />
       <item index="1" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
-      <item index="2" class="java.lang.String" itemvalue="PHPUnit.ContactTest" />
-      <item index="3" class="java.lang.String" itemvalue="PHP Script.DateTimeTest.php" />
-      <item index="4" class="java.lang.String" itemvalue="PHPUnit.DateTimeTest" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.DateTimeTest.php" />
+      <item index="3" class="java.lang.String" itemvalue="PHPUnit.DateTimeTest" />
+      <item index="4" class="java.lang.String" itemvalue="PHPUnit.Tests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.DateTimeTest" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.ThrottlerTest" />
-        <item index="2" class="java.lang.String" itemvalue="PHP Script.DateTimeTest.php" />
-        <item index="3" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
-        <item index="4" class="java.lang.String" itemvalue="PHPUnit.ContactTest" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.Tests" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.DateTimeTest" />
+        <item index="2" class="java.lang.String" itemvalue="PHPUnit.ThrottlerTest" />
+        <item index="3" class="java.lang.String" itemvalue="PHP Script.DateTimeTest.php" />
+        <item index="4" class="java.lang.String" itemvalue="PHPUnit.ActivityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -682,23 +679,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="22" width="1440" height="820" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.4842857" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.4842857" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.4842857" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39857143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5157143" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5157143" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -775,55 +772,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="36" selection-start="70" selection-end="70" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceQueryOption.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="41" selection-start="145" selection-end="145" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceStatus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceTypeAU.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceTypeNZ.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceTypeOther.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="249" selection-end="249" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/InvoiceTypeSG.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/JournalItemType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="38" selection-start="71" selection-end="71" vertical-scroll-proportion="-1.25">
@@ -866,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/TransactionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="34" selection-start="70" selection-end="70" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/BaseEnum.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="6" selection-start="110" selection-end="110" vertical-scroll-proportion="13.375">
@@ -880,9 +821,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Entity/ActivityTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="343" selection-end="774" vertical-scroll-proportion="-3.75">
+          <folding>
+            <element signature="e#42#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Dlin/Saasu/Tests/Validator/ValidatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="143" selection-end="143" vertical-scroll-proportion="-6.25">
+          <folding>
+            <element signature="e#6#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Enum/TransactionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="34" selection-start="70" selection-end="70" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Entity/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="20" selection-start="1203" selection-end="1203" vertical-scroll-proportion="-1.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dlin/Saasu/Validator/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="29" selection-start="1290" selection-end="1299" vertical-scroll-proportion="25.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="594" selection-end="594" vertical-scroll-proportion="-6.111111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="335" column="0" selection-start="11319" selection-end="11319" vertical-scroll-proportion="0.6727273">
+        <state line="433" column="0" selection-start="14833" selection-end="14833" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="170" selection-end="170" vertical-scroll-proportion="0.12">
           <folding />
         </state>
       </provider>
