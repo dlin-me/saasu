@@ -350,6 +350,19 @@ The test cases included in this library has 200+ assertion, they can also be ser
 
 Please take time to inspect the test code if necessary.
 
+Running the test cases requires PHPUnit. Also one must update the **TestBase.php** file with his own test account wsaccesskey and fileUID.
+
+```
+
+//file tests/Dlin/Saasu/Tests/Entity/TestBase.php
+...
+public function setUp()
+{
+        //Please update with your testing account settings
+        $this->api = new SaasuAPI('D4A92597762C4FDCAF66FF03C988B7B0', '41509');
+}
+```
+
 
 
 
