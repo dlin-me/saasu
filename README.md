@@ -206,7 +206,7 @@ You don't create or delete weak entities by themselves. Instead, you work with w
 Entity Class | Criteria Class  | Usage 
 ------------ | -------------    | ----------
 DeletedEntity | DeletedEntityCriteria  | Used to search for deleted entities
-BankAccount | BankAccountCriteria | List all tags used or search entities by tags
+Tag | TagCriteria | List all tags used or search entities by tags
 
 
 #### Action entities
@@ -376,7 +376,7 @@ The **hasError(fieldName)** method return true if the given field is invalid, fa
 
 The **getErrors()** method return an associated array of errors with the keys being field names and the type of error as value;
 
-Let's take a sniplet of test case as an example:
+Let's take a snippet of test case as an example:
 
 ```
 $a = new Activity();
