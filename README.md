@@ -152,7 +152,7 @@ foreach($results as $bankAccount){
 
 ```
 
-The *searchEntityes* method calls the Saasu *list* api. The *Criteria* object as parameter tell the api what to list and what filters apply. If you don't want to filter the result list you can skip setting any property value of the *Criteria* object:
+The *searchEntityes* method calls the Saasu *list* api. The *Criteria* object as the parameter tells the api what to list and what filters apply. If you don't want to filter the result list you can skip setting any property value of the *Criteria* object:
 
 ```
 //No filter applies, retrieve all bank accounts
