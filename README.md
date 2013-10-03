@@ -5,7 +5,7 @@
 
 This is a PHP Client library for [**Saasu**](http://www.saasu.com), the online accounting software. Full API documentation is available at <http://help.saasu.com/api/>
 
-This library is designed to make it easy to work with the  Saasu API for general purpose. 
+This library is designed to make it easy to work with the  Saasu API for general purpose.
 
 ## 2. Installation
 
@@ -13,7 +13,7 @@ With composer, add to your composer.json :
 
 ```
 {
-    require: {
+    "require": {
         "dlin/saasu": "dev-master"
     }
 }
@@ -23,7 +23,7 @@ With composer, add to your composer.json :
 ## 3. Usage
 This library, hereafter refered to as **Saasu PHP Client**, comes with a very simple interface with methods for interacting with Saasu API to load, insert, update, search, and delete entities.
 
-#### Instantiate the main api instance 
+#### Instantiate the main api instance
 
 ```
 $wsaccesskey = 'D4A92597762C4FDCAF66FF03C988B7B2';
@@ -47,21 +47,21 @@ $bankAccount->accountNumber = 123123123;
 $api->saveEntity($bankAccount);
 ```
 
-The *save()* method takes an entity object (See bellow for more details) and persists  object properties. The *save()* method works out if a 'create' operation or 'update' operation by inspecting the *uid* property of the entity object. If the entity object have a *null* *uid* property, a new entity will be created. If the entity object have a numeric *uid* property, which indicates an existing entity object, the existing entity object will be updated.
+The *save()* method takes an entity object (See bellow for more details) and persists  object properties. The *save()* method works out a 'create' operation or 'update' operation by inspecting the *uid* property of the entity object. If the entity object have a *null* *uid* property, a new entity will be created. If the entity object have a numeric *uid* property, which indicates an existing entity object, the existing entity object will be updated.
 
 #### Update an entity
 ```
 //change some value of an existing entity with a uid
-echo $bankAccount->uid; //prints 23456, 
+echo $bankAccount->uid; //prints 23456,
 $bankAccount->name = "Updated Name";
 
-//Save the change 
+//Save the change
 $api->saveEntity($bankAccount);
 ```
 
 
 #### Updating and Inserting entities in bulk
-The **Saasu PHP Client** allows updating and inserting multiple entities in one request. This is supported by the *saveEntities* method, which takes an array of entity objects to update or insert. You can mix existing entities and new entities into one array and perform the update and create actions at the same time in one single request.
+The **Saasu PHP Client** allows updating and inserting multiple entities in one request. This is supported by the *saveEntities* method, which takes an array of entity objects to update or insert. You can mix existing entities and new entities into one array and perform the update and create actions at the same time in one single request. Entities do not need to be of the same type in the array.
 
 ```
 //an account to create
@@ -87,7 +87,7 @@ $api->saveEntities(array($bankAccount, $existingAccount));
 
 
 
-#### Load an entity 
+#### Load an entity
 Different from some other API libraries, there's no 'getById' method provided. Instead, you use an empty entity with a given *uid* as the data holder and load the data into the entity using the **loadEntity** method:
 
 ```
@@ -162,12 +162,12 @@ Note that the first line of code above passes the uid into the entity constructo
 
 ## 4. Entities
 
-In **Saasu PHP Client**, the entity objects are what we called Data Transfer Objects. Some entities, like *EmailMessage*, are assisting entities and do not have *uid* property value assigned. Entities that can have assigned *uid* are **main** entities. Only **main** entities have accompanying criteria classes with the exception of *DeletedEntity* and *Tag* (covered later). 
+In **Saasu PHP Client**, the entity objects are what we called Data Transfer Objects. Some entities, like *EmailMessage*, are assisting entities and do not have *uid* property value assigned. Entities that can have assigned *uid* are **main** entities. Only **main** entities have accompanying criteria classes with the exception of *DeletedEntity* and *Tag* (covered later).
 
 #### Main entities
 
-Main Entity Class | Criteria Class 
------------- | -------------  
+Main Entity Class | Criteria Class
+------------ | -------------
 Activity | ActivityCriteria
 BankAccount | BankAccountCriteria
 Contact | ContactCriteria
@@ -185,8 +185,8 @@ TransactionCategory  | TransactionCategoryCriteria
 
 There are some entities that are not main entity but are used by a main entity as propery:
 
-Weak Entity Class | Used by Main Entity Class 
------------- | -------------  
+Weak Entity Class | Used by Main Entity Class
+------------ | -------------
 ComboItemItem | ComboItem
 EmailMessage | Invoice
 InventoryAdjustmentItem  | InventoryAdjustment
@@ -198,19 +198,19 @@ ServiceInvoiceItem | Invoice
 ItemInvoiceItem | Invoice
 TradingTerms | Invoice, Contact
 
-You don't create or delete weak entities by themselves. Instead, you work with weak entities by assigning them to  main entities as properties.
+You don't create or delete weak entities, instead, you work with weak entities by assigning them to  main entities as properties.
 
 #### Special entities
-*Tag* and *DeletedEntity* are special in that they are not actually entities in definition but technically they are DTO objects used mainly for searching purpose. That means, it is nosense to 'Create' a *DeletedEntity* (you delete an entity instead) or to 'Create' a *Tag* (you attach words to a entity as 'tag's). 
+*Tag* and *DeletedEntity* are special in that they are not actually entities by definition but technically they are DTO objects used mainly for searching purpose. That means, it is a nosense to 'Create' a *DeletedEntity* ( you delete an entity instead) or to 'Create' a *Tag* ( you attach words to a entity as 'tag's).
 
-Entity Class | Criteria Class  | Usage 
+Entity Class | Criteria Class  | Usage
 ------------ | -------------    | ----------
 DeletedEntity | DeletedEntityCriteria  | Used to search for deleted entities
 Tag | TagCriteria | List all tags used or search entities by tags
 
 
 #### Action entities
-These two types of entities are very special in that they are not entity at all but representation of actions you would like the Saasu API to do.
+These two types of entities are very special in that they are not entity at all but representation of actions you would like the Saasu API to take.
 
 
 Class | Usage
@@ -239,7 +239,7 @@ $email->from = "test.sender@gmail.com";
 $email->subject = "test saasu";
 $email->body = "test body";
 
-//create an instruction 
+//create an instruction
 $instruction = new InvoiceInstruction();
 $instruction->emailMessage = $email;
 $instruction->emailToContact = 'true';
@@ -258,10 +258,10 @@ When working with Invoice, the *saveEntity* method support another parameter *$i
 ## 5. Helper Classes
 To make easy working with the entity classes, there are some useful helper classes available.
 
-#### DateTime 
+#### DateTime
 Saasu API only accepts UTC, ISO 8061 format date and date time strings for Date and DateTime fields. This class is designed to help you generate the formatted date and datetime string with ease.
 
-There are two static methods available, both accept numeric timestamp or [date string](http://au1.php.net/manual/en/datetime.formats.php) input that are compactible with *strtotime* function
+There are two static methods available, both accept numeric timestamp or [date string](http://au1.php.net/manual/en/datetime.formats.php) input that are compatible with *strtotime* function
 
 ```
 echo DateTime::getDate(time());
@@ -279,7 +279,7 @@ echo DateTime::getDateTimes('+1day');
 ```
 #### Enumeration Classes
 
-Saasu use string tokens as required propery values in many cases. To help avoid typos and make it easy to lookup values, **Saasu PHP Client** make available constants grouped by classes with meaningful name. One can easily workout where they fit by inspecting the class names:
+Saasu use string tokens as required propery values in many cases. To help avoid typos and make it easy to lookup values, **Saasu PHP Client** make available constants grouped by classes with meaningful names. One can easily work out where they fit by inspecting the class names:
 
 
 * AccountType
@@ -311,6 +311,8 @@ Returns an array of constant names of the class
 ##### values()
 Return an associate array with constant names as keys and their values as values
 
+
+
 ## 6. Exceptions
 
 When *Saasu API* rejects the request, an exception is thrown with the relevant message and response code. There is a lot to take care when dealing with some complicated entities such as Invoice where inventory/stock level, account balance and payments must keep consistent.
@@ -322,11 +324,11 @@ Rules for invoices:
 * Invoice overpayment is not allowed (e.g. Applying $200 payment to $100 invoice is not * permitted).
 * Tax code cannot be applied to Tax Accounts (Asset: Tax Paid on Purchases and Liability: Tax Collected from Sales).
 * Tax code cannot be applied to Bank Accounts.
-* If due date is specified along with trading terms, then trading terms will take precedence 
+* If due date is specified along with trading terms, then trading terms will take precedence
 over due date to set the actual due date for the invoice being saved.
-* Inserting, updating, and deleting item invoices that have the potential to cause invalid stock level are not permitted. 
+* Inserting, updating, and deleting item invoices that have the potential to cause invalid stock level are not permitted.
 
-Sometimes it is just too easy to create, update, or delete an invoice that results in breaking this rules. In those cases, exception is to help:
+Sometimes it is just too easy to create, update, or delete an invoice that results in breaking these rules. In those cases, exception is to help:
 
 ```
 try{
@@ -372,17 +374,17 @@ All entities in this **Saasu PHP Client** library also come with a *validate()* 
 
 The *validate* method returns a Validator instance that provides the *hasError* and *getErrors* method.
 
-The **hasError(fieldName)** method return true if the given field is invalid, false otherwise
+The **hasError(fieldName)** method returns true if the given field is invalid, false otherwise
 
-The **getErrors()** method return an associated array of errors with the keys being field names and the type of error as value;
+The **getErrors()** method returns an associated array of errors with the keys being field names and the type of error as value;
 
 Let's take a snippet of test case as an example:
 
 ```
 $a = new Activity();
 
-//If not field name is given, any invalid field will result in **hasError** returning true.
-$this->assertTrue($a->validate()->hasError()); 
+//If no field name is given, any invalid field will result in **hasError** returning true.
+$this->assertTrue($a->validate()->hasError());
 
 //If a field name is given, true is returned if the given field has invalid value
 $this->assertTrue($a->validate()->hasError('type'));
@@ -396,7 +398,7 @@ echo $error['type']; //prints "required";
 //'required' is simple one of many error types, you can look at the Validator class for all.
 $a->type="Some invalid value";
 $errors = $a->validate()->getErrors();
-echo $error['type']; //prints "enum";
+echo $error['type']; //prints "enum"; i.e invalid value
 
 //Using the classe constants help avoid invalid values
 $a->type= ActivityType::Sale;
@@ -424,7 +426,7 @@ The Saasu empose some Fair play limits:
 
 >All synchronization activities must rely on Last Modified where this is supported in the API.
 
->If you are making hundreds of requests at once, insert a minimum of 2 seconds delay for every 
+>If you are making hundreds of requests at once, insert a minimum of 2 seconds delay for every
 50 requests.
 
 >When sending a multiple task request limit the number of tasks to a maximum of 50.
@@ -434,7 +436,7 @@ This PHP Client library comes with a internal throttle to make sure **no more th
 
 #### Hidden rules
 
-There coulbe be many undocumentated rules due to the complexity of accounting and the software itself. For example, when searching contacts, inactive contacts will never return, i.e. not searchable. 
+There could be be many undocumentated rules due to the complexity of accounting and the api software itself. For example, when searching contacts, inactive contacts will never return, i.e. not searchable.
 
 
 
