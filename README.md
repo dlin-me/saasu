@@ -19,6 +19,21 @@ With composer, add to your composer.json :
 }
 ```
 
+If you are new to [composer](http://getcomposer.org/), here is some simple steps to take.
+
+1. Download *composer.phar* from the above link
+2. Create a json file named *composer.json* containing just exactly the above "require" block
+3. Having *composer.phar* and *composer.json* side by side, you can run the command:
+```
+php ./composer.phar install
+```
+4. The composer will create a directory named *vendor* and download all required libraries into it.
+
+5. In the *vendor* directory, there's also a file named *autoload.php*. This is the PHP autoloader for the libraries inside. You might need to register it to you existing autoloader, or include it manually.
+
+
+
+
 
 ## 3. Usage
 This library, hereafter refered to as **Saasu PHP Client**, comes with a very simple interface with methods for interacting with Saasu API to load, insert, update, search, and delete entities.
@@ -26,10 +41,24 @@ This library, hereafter refered to as **Saasu PHP Client**, comes with a very si
 #### Instantiate the main api instance
 
 ```
+
+// You will need to include this autoload script manually
+// if you don't have any autoloader setup.
+include "../path/to/vendor/autoload.php"; 
+
+// one needs to declear the namespace for each class used 
+use Dlin\Saasu\SaasuAPI;
+
+// You can obtain accesskey and fileUid from your account at:
+// https://secure.saasu.com/a/net/webservicessettings.aspx
 $wsaccesskey = 'D4A92597762C4FDCAF66FF03C988B7B2';
 $fileUid = '41555';
+
+
 //Instantiate the main class for later use
 $api = new SaasuAPI($wsaccesskey, $fileUid);
+...
+
 ```
 ####  Create ( insert ) an entity
 ```
@@ -105,8 +134,8 @@ echo $newBankAccount->name; //prints "Updated Name";
 
 ```
 
-#### Search Entities
-To search entites, you will need to specify the search criterion. This is done by creating a criteria object and setting the properties of that object. Every main entities class has an accompanying criteria class. For example, to search for a *BankAccount*, you will need a *BankAccountCriteria* object. **More details will be covered in later sections.**
+#### Search Entities ( List Entities )
+To search/list entites, you will need to specify the search criterion. This is done by creating a criteria object and setting the properties of that object. Every main entities class has an accompanying criteria class. For example, to search for a *BankAccount*, you will need a *BankAccountCriteria* object. **More details will be covered in later sections.**
 
 ```
 $criteria = new BankAccountCriteria();
@@ -122,6 +151,18 @@ foreach($results as $bankAccount){
 }
 
 ```
+
+The *searchEntityes* method calls the Saasu *list* api. The *Criteria* object as parameter tell the api what to list and what filters apply. If you don't want to filter the result list you can skip setting any property value of the *Criteria* object:
+
+```
+//No filter applies, retrieve all bank accounts
+$results = $api->searchEntities(new BankAccountCriteria());
+
+```
+
+
+
+
 
 When searching entities, the Saasu API actually returns extra fields of data that are not defined as entity object properties. For example, when searching for InvoicePayment, the API returns the *amount* field that is not defined as a property of the InvoicePayment object ( it has InvoicePaymentItems that add up to the total instead). These extra data fields are exposed via the *getExtra* method:
 
@@ -139,6 +180,10 @@ echo $res->getExtra('amount');//prints 60
 
 ```
 
+*** Note: ***
+
+From Oct 2013, the inventoryItemList and commboItemList api will be officially dropped.
+Since 1.0.1, this *Saasu PHP Client* uses the new FullInventoryItemList and FullCommboItemList API. Please make sure you have the right version after Oct. 2013.
 
 
 
@@ -436,7 +481,12 @@ This PHP Client library comes with a internal throttle to make sure **no more th
 
 #### Hidden rules
 
-There could be be many undocumentated rules due to the complexity of accounting and the api software itself. For example, when searching contacts, inactive contacts will never return, i.e. not searchable.
+There could be be many undocumentated rules due to the complexity of accounting and the api software itself. 
+
+For example, when searching contacts, inactive contacts will never return, i.e. not searchable.
+
+Another example for deleting an InventoryItem. If you find yourself not being able to delete an InventoryItem, you might need to first delete any related InventoryTransfer, InventoryAdjustment and ComboItem in order before you can successfully delete an InventoryItem. Because there's is a chain of dependency from InventoryAdjustment to InventoryItem. 
+
 
 
 

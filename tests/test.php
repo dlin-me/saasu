@@ -11,7 +11,9 @@ include 'bootstrap.php';
 
 use Dlin\Saasu\SaasuAPI;
 
-$api = new SaasuAPI('', '');
+$api = new SaasuAPI('7A358B66371C47C7AEA26A2517B8D3D3', '44208');
 
 $c = new \Dlin\Saasu\Criteria\FullInventoryItemCriteria();
-$api->searchEntities($c);
+$return = $api->searchEntities($c);
+
+print_r($return);

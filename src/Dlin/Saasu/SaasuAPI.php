@@ -213,11 +213,10 @@ class SaasuAPI
     {
         $this->throttler->throttle();
         $query = $criteria ? get_object_vars($criteria) : array();
-        $fullClass = $criteria->getEntityClass();
-        $class = explode('\\', $fullClass);
-        $entityName = lcfirst(array_pop($class));
 
-        $url = $this->_buildURL($entityName . 'List', $query);echo $url; exit;
+        $entityName = $criteria->getEntityName();
+
+        $url = $this->_buildURL($criteria->getEntityListName(), $query);
         $response = $this->client->get($url)->send();
         //check exception in response
         $this->checkException($response);
@@ -235,6 +234,7 @@ class SaasuAPI
          * @var \Dlin\Saasu\Entity\EntityBase $entity
          */
         foreach ($entityXMLItems as $item) {
+            $fullClass = $criteria->getEntityClass();
             $entity = new $fullClass();
             $entity->fromXML($item->asXML());
             $res[] = $entity;

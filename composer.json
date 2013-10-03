@@ -3,7 +3,7 @@
     "description":"PHP Library for Saasu API",
     "keywords":["accounting", "saasu", "webservice"],
     "license":"MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors":[
         {
             "name":"David Lin",

@@ -48,7 +48,8 @@ class TestBase extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         //Please update with your testing account settings
-        $this->api = new SaasuAPI('D4A92597762C4FDCAF66FF03C988B7B0', '41509');
+        $this->api = new SaasuAPI('7A358B66371C47C7AEA26A2517B8D3D3', '44208');
+
     }
 
 

@@ -21,6 +21,12 @@ class FullInventoryItemCriteria extends CriteriaBase
     }
 
 
+    public function getEntityListName()
+    {
+        return 'full' . ucfirst($this->getEntityName()).'List';
+    }
+
+
     public $isActive;
     public $codeBeginsWith;
     public $descriptionBeginsWith;

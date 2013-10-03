@@ -19,6 +19,14 @@ class FullComboItemCriteria extends CriteriaBase
         return "Dlin\\Saasu\\Entity\\ComboItem";
     }
 
+
+    public function getEntityListName()
+    {
+        return 'full' . ucfirst($this->getEntityName()).'List';
+    }
+
+
+
     public $isActive;
     public $codeBeginsWith;
     public $descriptionBeginsWith;
