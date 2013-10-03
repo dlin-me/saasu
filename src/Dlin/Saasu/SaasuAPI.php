@@ -217,7 +217,7 @@ class SaasuAPI
         $class = explode('\\', $fullClass);
         $entityName = lcfirst(array_pop($class));
 
-        $url = $this->_buildURL($entityName . 'List', $query);
+        $url = $this->_buildURL($entityName . 'List', $query);echo $url; exit;
         $response = $this->client->get($url)->send();
         //check exception in response
         $this->checkException($response);

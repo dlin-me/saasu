@@ -7,16 +7,11 @@
  * 
  */
 
-$a = array();
-$a['a'] = 1;
-$a['b'] = 2;
+include 'bootstrap.php';
 
-//$arr = array();
+use Dlin\Saasu\SaasuAPI;
 
-$arr[] = (true or false) ? 'yes':'no';
+$api = new SaasuAPI('', '');
 
-$a['c'] = $arr;
-
-print_r($a);
-
-echo json_encode($a);
+$c = new \Dlin\Saasu\Criteria\FullInventoryItemCriteria();
+$api->searchEntities($c);
